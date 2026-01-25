@@ -1,5 +1,9 @@
 {
+  "version": 2,
   "buildCommand": "pnpm install && pnpm build",
   "outputDirectory": "dist/public",
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
