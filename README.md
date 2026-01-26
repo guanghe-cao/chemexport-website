@@ -21,7 +21,7 @@ This is a static website for ShiChem Industrial Materials Co., Ltd. (实化工�
 - **Styling**: Tailwind CSS 4 with custom design tokens
 - **UI Components**: shadcn/ui (Radix UI primitives)
 - **Icons**: Lucide React
-- **Deployment**: Static site (can be deployed to Vercel, Netlify, GitHub Pages, or any static host)
+- **Deployment**: Vercel static frontend + serverless `/api/contact` endpoint
 
 ---
 
@@ -233,6 +233,12 @@ The site uses **Inter** font (loaded from Google Fonts in `client/index.html`). 
 - **Framework Preset**: Vite
 - **Build Command**: `pnpm build` or `npm run build`
 - **Output Directory**: `dist/public`
+
+**Environment Variables (required for contact form):**
+- `RESEND_API_KEY`
+- `INQUIRY_TO_EMAIL` (default: `tatum.hongquan@gmail.com`)
+- `INQUIRY_CC_EMAIL` (default: `sales.hongquan@gmail.com`)
+- `INQUIRY_FROM_EMAIL` (verified sender in Resend)
 
 ### Deploy to Netlify
 

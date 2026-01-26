@@ -8,12 +8,61 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, Clock, MapPin } from "lucide-react";
 import { toast } from "sonner";
+import { useState, type FormEvent } from "react";
 import { productCategories } from "@/data/products";
 
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Thank you for your inquiry! We'll respond within 24 hours.");
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get("name") || "").trim(),
+      company: String(formData.get("company") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      phone: String(formData.get("phone") || "").trim(),
+      country: String(formData.get("country") || "").trim(),
+      category: String(formData.get("category") || "").trim(),
+      application: String(formData.get("application") || "").trim(),
+      quantity: String(formData.get("quantity") || "").trim(),
+      message: String(formData.get("message") || "").trim(),
+      honeypot: String(formData.get("company_website") || "").trim(),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const responseBody = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        const message =
+          typeof responseBody?.error === "string"
+            ? responseBody.error
+            : "Submission failed.";
+        throw new Error(message);
+      }
+
+      toast.success("Thank you for your inquiry! We'll respond within 24 business hours.");
+      form.reset();
+      setSelectedCategory("");
+    } catch (error) {
+      const message =
+        error instanceof Error && error.message
+          ? error.message
+          : "Submission failed. Please email tatum.hongquan@gmail.com directly.";
+      toast.error(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,36 +97,44 @@ export default function Contact() {
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-6">
+                      <input
+                        type="text"
+                        name="company_website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        className="hidden"
+                      />
+                      <input type="hidden" name="category" value={selectedCategory} />
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="name">Your Name *</Label>
-                          <Input id="name" required placeholder="John Smith" />
+                          <Input id="name" name="name" required placeholder="John Smith" />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="company">Company Name *</Label>
-                          <Input id="company" required placeholder="ABC Construction Ltd" />
+                          <Input id="company" name="company" required placeholder="ABC Construction Ltd" />
                         </div>
                       </div>
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="email">Email Address *</Label>
-                          <Input id="email" type="email" required placeholder="john@example.com" />
+                          <Input id="email" name="email" type="email" required placeholder="john@example.com" />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="phone">Phone Number</Label>
-                          <Input id="phone" type="tel" placeholder="+1 234 567 8900" />
+                          <Input id="phone" name="phone" type="tel" placeholder="+1 234 567 8900" />
                         </div>
                       </div>
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="country">Country *</Label>
-                          <Input id="country" required placeholder="United States" />
+                          <Input id="country" name="country" required placeholder="United States" />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="category">Product Category</Label>
-                          <Select>
+                          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                             <SelectTrigger>
                               <SelectValue placeholder="Select a category" />
                             </SelectTrigger>
@@ -94,26 +151,27 @@ export default function Contact() {
 
                       <div className="space-y-2">
                         <Label htmlFor="application">Application / End Use</Label>
-                        <Input id="application" placeholder="e.g., Ready-mix concrete production" />
+                        <Input id="application" name="application" placeholder="e.g., Ready-mix concrete production" />
                       </div>
 
                       <div className="space-y-2">
                         <Label htmlFor="quantity">Estimated Quantity</Label>
-                        <Input id="quantity" placeholder="e.g., 20 MT per month" />
+                        <Input id="quantity" name="quantity" placeholder="e.g., 20 MT per month" />
                       </div>
 
                       <div className="space-y-2">
                         <Label htmlFor="message">Additional Information *</Label>
                         <Textarea 
                           id="message" 
+                          name="message"
                           required 
                           rows={6}
                           placeholder="Please provide details about your requirements: specific products, grades, specifications, delivery timeline, destination port, etc."
                         />
                       </div>
 
-                      <Button type="submit" size="lg" className="w-full">
-                        Submit Inquiry
+                      <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                        {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                       </Button>
 
                       <p className="text-xs text-muted-foreground text-center">
@@ -189,6 +247,23 @@ export default function Contact() {
                         <div className="text-sm text-muted-foreground">Shanghai, China</div>
                       </div>
                     </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-[#25D366] text-white">
+                  <CardContent className="p-6">
+                    <h3 className="font-bold text-lg mb-2">Chat on WhatsApp</h3>
+                    <p className="text-sm opacity-90 mb-4">
+                      For quick questions or product availability, reach our team on WhatsApp.
+                    </p>
+                    <a
+                      href="https://wa.me/15653883028?text=Hello%2C%20I'm%20interested%20in%20your%20chemical%20export%20products."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-[#128C7E] transition-colors hover:bg-white/90"
+                    >
+                      <span>+1 565 388 3028</span>
+                    </a>
                   </CardContent>
                 </Card>
 

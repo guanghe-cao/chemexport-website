@@ -18,7 +18,7 @@ This guide explains how to deploy the ShiChem website to various hosting platfor
 
 ## Option 1: Deploy to Vercel (Recommended)
 
-Vercel is the fastest and easiest way to deploy a React + Vite site. It automatically detects the framework and configures everything for you.
+Vercel is the fastest and easiest way to deploy the React + Vite frontend and the `/api/contact` serverless function. It automatically detects the framework and configures everything for you.
 
 ### Step 1: Push to GitHub
 
@@ -44,14 +44,27 @@ git push -u origin main
    - **Output Directory**: `dist/public`
 5. Click **"Deploy"**
 
-### Step 3: Wait for Deployment
+### Step 3: Configure Environment Variables
+
+Set the following environment variables in **Project Settings → Environment Variables**:
+
+- `RESEND_API_KEY` (required)
+- `INQUIRY_TO_EMAIL` (default: `tatum.hongquan@gmail.com`)
+- `INQUIRY_CC_EMAIL` (default: `sales.hongquan@gmail.com`)
+- `INQUIRY_FROM_EMAIL` (required for production deliverability)
+
+**Notes:**
+- `INQUIRY_FROM_EMAIL` must be a **verified sender** in Resend.
+- If `INQUIRY_FROM_EMAIL` is not set, the API falls back to `onboarding@resend.dev` for development.
+
+### Step 4: Wait for Deployment
 
 Vercel will build and deploy your site in 1-2 minutes. You'll get a URL like:
 ```
 https://chemexport-website.vercel.app
 ```
 
-### Step 4: Configure Custom Domain (Optional)
+### Step 5: Configure Custom Domain (Optional)
 
 1. Go to your project settings in Vercel
 2. Click **"Domains"**
@@ -291,7 +304,11 @@ If you need to add environment variables (e.g., API keys), follow these steps fo
 
 1. Go to your project settings
 2. Click **"Environment Variables"**
-3. Add variables (e.g., `VITE_API_KEY`)
+3. Add the variables required for `/api/contact`:
+   - `RESEND_API_KEY`
+   - `INQUIRY_TO_EMAIL`
+   - `INQUIRY_CC_EMAIL`
+   - `INQUIRY_FROM_EMAIL`
 4. Redeploy
 
 ### Netlify
