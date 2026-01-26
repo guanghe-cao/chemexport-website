@@ -222,15 +222,14 @@ export default function Contact() {
                       <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <div>
                         <div className="font-semibold text-sm text-foreground mb-1">Email</div>
-                        <div className="text-sm text-muted-foreground">sales@shichem.com</div>
-                        <div className="text-sm text-muted-foreground">tech@shichem.com</div>
+                        <div className="text-sm text-muted-foreground">tatum.hongquan@gmail.com</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <Phone className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <div>
                         <div className="font-semibold text-sm text-foreground mb-1">Phone</div>
-                        <div className="text-sm text-muted-foreground">+86 XXX XXXX XXXX</div>
+                        <div className="text-sm text-muted-foreground">+86 198 6210 3099</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
@@ -257,12 +256,12 @@ export default function Contact() {
                       For quick questions or product availability, reach our team on WhatsApp.
                     </p>
                     <a
-                      href="https://wa.me/15653883028?text=Hello%2C%20I'm%20interested%20in%20your%20chemical%20export%20products."
+                      href="https://wa.me/8615653883028?text=Hello%2C%20I'm%20interested%20in%20your%20chemical%20export%20products."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-[#128C7E] transition-colors hover:bg-white/90"
                     >
-                      <span>+1 565 388 3028</span>
+                      <span>+86 156 5388 3028</span>
                     </a>
                   </CardContent>
                 </Card>

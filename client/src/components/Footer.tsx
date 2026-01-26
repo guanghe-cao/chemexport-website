@@ -40,8 +40,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-sm mb-4 text-foreground">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Email: sales@example.com</li>
-              <li>Technical: tech@example.com</li>
+              <li>Email: tatum.hongquan@gmail.com</li>
+              <li>Phone: +86 198 6210 3099</li>
               <li>Response Time: Within 24 hours</li>
             </ul>
           </div>

@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "15653883028";
+const WHATSAPP_NUMBER = "8615653883028";
 const DEFAULT_MESSAGE = encodeURIComponent(
   "Hello, I'm interested in your chemical export products."
 );

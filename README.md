@@ -55,6 +55,8 @@ chemexport-website/
 │   │   ├── main.tsx                 # React entry point
 │   │   └── index.css                # ⭐ GLOBAL STYLES & THEME (EDIT HERE)
 │   └── index.html                   # HTML template
+├── api/                             # Vercel serverless functions
+│   └── contact.ts                   # Contact form email endpoint
 ├── server/                          # Minimal server for production (static file serving)
 │   └── index.ts
 ├── shared/                          # Shared constants
@@ -273,6 +275,158 @@ The site uses **Inter** font (loaded from Google Fonts in `client/index.html`). 
 ### Deploy to Any Static Host
 
 Build the site and upload the `dist/public/` directory to your hosting provider (AWS S3, DigitalOcean Spaces, Cloudflare Pages, etc.).
+
+---
+
+## Deployment / Ops / Environment
+
+### Architecture Overview
+
+This project is deployed on **Vercel** with the following architecture:
+
+- **Frontend**: React SPA (Vite build) → Static files served from Vercel CDN
+- **API**: Serverless function at `/api/contact` (Vercel Functions)
+- **Email Service**: Resend API (third-party)
+- **Domain & DNS**: Cloudflare (DNS only, no proxy)
+- **SSL**: Managed by Vercel
+
+**Deployment Flow:**
+1. Code pushed to GitHub → Vercel auto-deploys
+2. Vercel runs `pnpm build` → Outputs to `dist/public/`
+3. Static files deployed to Vercel CDN
+4. Serverless function (`api/contact.ts`) deployed as Vercel Function
+
+---
+
+### Required Environment Variables
+
+All environment variables must be configured in **Vercel Project → Settings → Environment Variables**.
+
+**⚠️ Important:** After adding/modifying environment variables, you must **Redeploy** for changes to take effect.
+
+#### `RESEND_API_KEY`
+
+- **Purpose**: API key for Resend email service (used by `/api/contact` endpoint)
+- **Source**: Generated from Resend Dashboard → API Keys
+- **Security**: **Never commit this to Git** (already in `.gitignore`)
+- **Format**: String starting with `re_...`
+
+#### `INQUIRY_FROM_EMAIL`
+
+- **Purpose**: Email address used as "From" field in inquiry emails
+- **Current Value**: `onboarding@resend.dev` (fallback for development)
+- **Production Note**: Must be a **verified sender** in Resend. If using a custom domain, verify it in Resend Dashboard → Domains first.
+- **Format**: Valid email address
+
+#### `INQUIRY_TO_EMAIL`
+
+- **Purpose**: Primary recipient email for contact form submissions
+- **Example**: `tatum.hongquan@gmail.com`
+- **Format**: Valid email address
+
+#### `INQUIRY_CC_EMAIL`
+
+- **Purpose**: CC recipient email for contact form submissions
+- **Example**: `sales.hongquan@gmail.com`
+- **Format**: Valid email address
+
+**How to Set in Vercel:**
+1. Go to Vercel Dashboard → Your Project → Settings → Environment Variables
+2. Add each variable (select environment: Production, Preview, Development as needed)
+3. Click "Save"
+4. **Redeploy** the project (Deployments → ... → Redeploy)
+
+---
+
+### Resend Email Service Configuration
+
+**Service**: [Resend](https://resend.com)
+
+**Account Details:**
+- **Login Email**: `guanghe0314@gmail.com`
+- **Dashboard**: https://resend.com/emails
+
+**Key Management:**
+- **Location**: Resend Dashboard → API Keys → Create API Key
+- **Usage**: Copy the key → Paste into Vercel `RESEND_API_KEY` environment variable
+- **Rotation**: If key is lost/compromised, generate new key in Resend Dashboard and update Vercel
+
+**Monitoring:**
+- **Logs**: Resend Dashboard → Logs (shows all sent emails, delivery status, errors)
+- **Debug**: If emails not received, check Resend Logs first (not Vercel logs)
+
+**Sender Verification:**
+- `onboarding@resend.dev` is pre-verified (works immediately)
+- Custom domains require verification: Resend Dashboard → Domains → Add Domain → Follow DNS setup
+
+---
+
+### Cloudflare Domain & DNS Configuration
+
+**Domain**: `shichemindustrial.com`
+
+**DNS Provider**: Cloudflare
+- **Nameservers**: Managed by Cloudflare (`ns.cloudflare.com`)
+- **Mode**: **DNS only** (not proxied through Cloudflare)
+
+**DNS Records:**
+
+| Type | Name | Value | Purpose |
+|------|------|-------|---------|
+| `A` | `@` (root) | Vercel IP (e.g., `76.76.21.21`) | Root domain → Vercel |
+| `CNAME` | `www` | Vercel CNAME (e.g., `cname.vercel-dns.com`) | www subdomain → Vercel |
+
+**SSL/TLS:**
+- Managed by **Vercel** (not Cloudflare)
+- Automatic HTTPS via Vercel's Let's Encrypt integration
+
+**Redirects:**
+- Non-www → www redirect (307/308) handled by **Vercel Domain Settings**
+- Configure in Vercel Dashboard → Your Project → Settings → Domains → `shichemindustrial.com` → Redirect Settings
+
+**Important Notes:**
+- Cloudflare is **DNS only** (gray cloud icon), not proxied (orange cloud)
+- Actual hosting and SSL are handled by Vercel
+- If DNS changes are made, allow 1-48 hours for global propagation
+
+---
+
+### Troubleshooting & Debug
+
+#### Contact Form Returns 500 Error
+
+**Check:**
+1. Vercel Dashboard → Deployments → Latest Deployment → Functions Logs
+2. Look for error messages related to `RESEND_API_KEY` or email sending
+3. Verify all 4 environment variables are set correctly
+
+**Common Causes:**
+- Missing `RESEND_API_KEY`
+- Invalid `INQUIRY_FROM_EMAIL` (not verified in Resend)
+- Resend API key expired/revoked
+
+#### Emails Not Received
+
+**Check:**
+1. **Resend Dashboard → Logs** (primary source of truth)
+   - Shows if email was sent, delivered, bounced, etc.
+2. Verify `INQUIRY_FROM_EMAIL` is a verified sender in Resend
+3. Check spam/junk folders
+4. Verify `INQUIRY_TO_EMAIL` and `INQUIRY_CC_EMAIL` are correct
+
+#### Environment Variables Not Applied
+
+**Check:**
+1. Did you **Redeploy** after adding/modifying variables?
+2. Verify variables are set for correct environment (Production/Preview/Development)
+3. Check Vercel Dashboard → Settings → Environment Variables → Confirm all 4 variables exist
+
+#### Domain/DNS Issues
+
+**Check:**
+1. Cloudflare Dashboard → DNS → Verify records point to Vercel
+2. Use `dig` or online DNS checker to verify propagation
+3. Vercel Dashboard → Domains → Verify domain is connected and SSL is active
 
 ---
 
