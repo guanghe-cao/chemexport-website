@@ -117,7 +117,7 @@ export function Applications() {
         </section>
         <section className="py-16">
           <div className="container">
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Card>
                 <CardContent className="p-6">
                   <img src="/images/concrete-admixtures.png" alt="Concrete" className="w-full rounded-lg mb-4" />
@@ -132,6 +132,15 @@ export function Applications() {
                   <p className="text-sm text-muted-foreground">Additives for high-quality mortar formulations</p>
                 </CardContent>
               </Card>
+              <Link href="/applications/tio2-coatings-guide">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+                  <CardContent className="p-6">
+                    <img src="/images/water-treatment.png" alt="Coatings" className="w-full rounded-lg mb-4" />
+                    <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">Titanium Dioxide (TiO2) in Coatings</h3>
+                    <p className="text-sm text-muted-foreground">Comprehensive guide on high-performance titanium dioxide applications for the paint and coatings industry.</p>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           </div>
         </section>
