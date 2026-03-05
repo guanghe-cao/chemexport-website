@@ -55,36 +55,36 @@ export default function PpFiberConcrete() {
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
+                A single{" "}
                 <strong className="text-foreground">
-                  Plastic shrinkage cracking
+                  plastic shrinkage cracking
                 </strong>{" "}
-                is the most avoidable early-age defect in concrete—and one of
-                the most expensive when it triggers callbacks on slabs,
-                pavements, and flatwork. The cracks look cosmetic at first. Then
-                they telegraph through toppings, coatings, and floor coverings,
-                and suddenly you've got a durability argument and a warranty
-                claim.
+                callback on a 500-yard slab costs you $25,000–$50,000 in
+                grinding, overlay, and schedule damage. The{" "}
+                <strong className="text-foreground">PP fiber concrete</strong>{" "}
+                that would have prevented it costs about $0.30/yd³. That's the
+                math. And once you see it, the question stops being "should we
+                add fiber?" and becomes "why aren't we adding it to every load?"
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-                If you want to{" "}
+                This guide covers why{" "}
                 <strong className="text-foreground">
-                  prevent concrete cracking
+                  plastic shrinkage cracking
                 </strong>{" "}
-                without tearing up your mix design,{" "}
-                <strong className="text-foreground">PP fiber concrete</strong>{" "}
-                is a proven, low-disruption answer for{" "}
-                <strong className="text-foreground">
-                  concrete crack control
-                </strong>
-                . This guide covers why the cracking happens, how{" "}
+                happens, how{" "}
                 <strong className="text-foreground">
                   synthetic fiber reinforcement
                 </strong>{" "}
-                works at the microstructural level, and{" "}
+                stops it at the microstructural level, and{" "}
                 <strong className="text-foreground">
                   how to use PP fiber in concrete
                 </strong>{" "}
-                to get consistent results pour after pour.
+                to{" "}
+                <strong className="text-foreground">
+                  prevent concrete cracking
+                </strong>{" "}
+                and protect your margin—pour after pour, with zero callbacks and
+                zero warranty arguments.
               </p>
             </div>
           </div>
@@ -95,18 +95,56 @@ export default function PpFiberConcrete() {
           <div className="container">
             <div className="max-w-3xl mx-auto">
 
-              {/* ── Section 1: What Causes It ── */}
+              {/* ── Cost Comparison Visual ── */}
+              <Card className="mb-12 overflow-hidden border-2">
+                <div className="grid md:grid-cols-2">
+                  <div className="bg-destructive/5 border-b md:border-b-0 md:border-r border-destructive/20 p-6">
+                    <p className="text-xs font-bold uppercase tracking-widest text-destructive mb-3">
+                      The Callback
+                    </p>
+                    <p className="text-3xl md:text-4xl font-extrabold text-destructive mb-2">
+                      ~$50/yd³
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Grinding, overlay, schedule slip, warranty dispute, and
+                      reputation damage on a single 500-yard slab callback.
+                      $25K–$50K gone before the argument is even settled.
+                    </p>
+                  </div>
+                  <div className="bg-green-50 dark:bg-green-950/20 p-6">
+                    <p className="text-xs font-bold uppercase tracking-widest text-green-700 dark:text-green-400 mb-3">
+                      The Fix
+                    </p>
+                    <p className="text-3xl md:text-4xl font-extrabold text-green-700 dark:text-green-400 mb-2">
+                      $0.30/yd³
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      PP microfiber added at the batch plant. No mix redesign.
+                      No schedule change. No finishing headache. Just{" "}
+                      <strong className="text-foreground">
+                        concrete crack control
+                      </strong>{" "}
+                      built into every yard.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              {/* ── Section 1: What Causes It — "The $50/yd³ problem" ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 What Causes Plastic Shrinkage Cracking in Concrete?
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Plastic shrinkage cracking shows up{" "}
-                <strong className="text-foreground">before</strong> the concrete
-                sets. The mechanism is simple: surface water evaporates faster
-                than bleed water can migrate up to replace it. The exposed
-                surface shrinks. Tensile stress builds in paste that has zero
-                tensile capacity. The concrete cracks because it has no other
-                way to relieve the strain.
+                This is the $50/yd³ problem.{" "}
+                <strong className="text-foreground">
+                  Plastic shrinkage cracking
+                </strong>{" "}
+                shows up <strong className="text-foreground">before</strong> the
+                concrete sets. Surface water evaporates faster than bleed water
+                can migrate up to replace it. The exposed surface shrinks.
+                Tensile stress builds in paste that has zero tensile capacity.
+                The concrete cracks because it has no other way to relieve the
+                strain—and the callback clock starts ticking.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 The industry trigger point is the evaporation rate. When the
@@ -142,21 +180,22 @@ export default function PpFiberConcrete() {
                 Once those first map cracks open, they don't close. They
                 propagate through every layer applied over them—coatings,
                 epoxies, VCT, polished finishes. A surface defect becomes a
-                system failure.
+                system failure. A cosmetic crack becomes a $50/yd³ liability.
               </p>
 
               <Separator className="mb-10" />
 
-              {/* ── Section 2: The Solution ── */}
+              {/* ── Section 2: The Solution — "The $0.30/yd³ fix" ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 The Solution: Introducing a 3D Fiber Reinforcement Network
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                PP microfibers don't slow evaporation. That's not their job.
-                Their job is to hold the concrete together when shrinkage
-                stresses hit during the plastic phase. The moisture loss is
-                weather-driven. Whether that moisture loss turns into visible
-                cracking is{" "}
+                This is the $0.30/yd³ fix—and the return on it is
+                staggering. PP microfibers don't slow evaporation. That's not
+                their job. Their job is to hold the concrete together when
+                shrinkage stresses hit during the plastic phase. The moisture
+                loss is weather-driven. Whether that moisture loss turns into
+                visible cracking—and a five-figure callback—is{" "}
                 <strong className="text-foreground">
                   reinforcement-driven
                 </strong>
@@ -172,7 +211,8 @@ export default function PpFiberConcrete() {
                 <strong className="text-foreground">
                   3D secondary reinforcement network
                 </strong>{" "}
-                that does three things:
+                that does three things—each one a layer of insurance between you
+                and that $50/yd³ callback:
               </p>
 
               <div className="grid sm:grid-cols-3 gap-4 mb-8">
@@ -213,7 +253,8 @@ export default function PpFiberConcrete() {
                 </strong>{" "}
                 specification for slabs-on-grade, pavements, curb and gutter,
                 and general flatwork. Low cost. Minimal disruption. Measurable
-                crack reduction.
+                crack reduction. The ROI isn't a theory—it's the difference
+                between a clean pour and a warranty claim.
               </p>
 
               <Separator className="mb-10" />
@@ -253,15 +294,16 @@ export default function PpFiberConcrete() {
                 </CardContent>
               </Card>
 
-              {/* ── Section 3: Monofilament vs Fibrillated ── */}
+              {/* ── Section 3: Monofilament vs Fibrillated — Decision Frame ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Monofilament vs. Fibrillated PP Fibers: Which to Choose?
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Both fiber types target plastic shrinkage cracking control, but
-                they behave differently in fresh concrete and under the finishing
-                tools. Pick the wrong one and you'll either fight the finish or
-                leave performance on the table.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                You've decided to spend the $0.30/yd³. Good. Now pick the right
+                tool for the job. Both fiber types target plastic shrinkage
+                cracking control, but they behave differently in fresh concrete
+                and under the finishing tools. Pick the wrong one and you'll
+                either fight the finish or leave performance on the table.
               </p>
 
               <div className="grid md:grid-cols-2 gap-5 mb-8">
@@ -316,7 +358,7 @@ export default function PpFiberConcrete() {
                 </Card>
               </div>
 
-              <div className="bg-muted/30 rounded-lg p-5 mb-10 text-sm">
+              <div className="bg-muted/30 rounded-lg p-5 mb-4 text-sm">
                 <p className="font-semibold text-foreground mb-1">
                   Simple Selection Rule
                 </p>
@@ -332,17 +374,35 @@ export default function PpFiberConcrete() {
                 </p>
               </div>
 
+              <div className="bg-primary/5 border border-primary/20 rounded-lg p-5 mb-10 text-sm">
+                <p className="font-semibold text-foreground mb-1">
+                  Quick Decision Frame
+                </p>
+                <p className="text-muted-foreground">
+                  <strong className="text-foreground">IF</strong> finish quality
+                  is the priority →{" "}
+                  <strong className="text-foreground">monofilament</strong>.{" "}
+                  <strong className="text-foreground">IF</strong> green cohesion
+                  and crack resistance matter more →{" "}
+                  <strong className="text-foreground">fibrillated</strong>.
+                  Either way, you're spending $0.30/yd³ to avoid a $50/yd³
+                  problem.
+                </p>
+              </div>
+
               <Separator className="mb-10" />
 
-              {/* ── Section 4: Dosing & Mixing ── */}
+              {/* ── Section 4: Dosing & Mixing — Mistake-Avoidance Frame ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Dosing and Mixing Polypropylene Fiber for Optimal Results
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
+                You bought the right fiber. Now don't screw up the batching.
                 PP microfibers perform when they're dispersed. Clumped fibers
                 sitting in a ball at the bottom of the drum don't reinforce
                 anything. Your mixing protocol and dosing discipline determine
-                whether the fiber works or becomes a QC headache.
+                whether the $0.30/yd³ investment pays off or becomes a QC
+                headache of its own.
               </p>
 
               <h3 className="text-xl font-bold text-foreground mb-4">
@@ -351,7 +411,8 @@ export default function PpFiberConcrete() {
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Build a repeatable SOP. The difference between "fibers work
                 great" and "we had fiber balls in every load" is almost always
-                the batching sequence:
+                the batching sequence. Each step below is framed around the
+                mistake it prevents:
               </p>
 
               <div className="space-y-4 mb-8">
@@ -361,30 +422,35 @@ export default function PpFiberConcrete() {
                     heading: "Add fibers early",
                     detail:
                       "Introduce PP fibers when there's enough mortar volume in the mixer or truck to actually disperse them. Dumping fibers into a nearly dry load guarantees clumping.",
+                    mistake: "Mistake prevented: fiber clumps from dry-batching",
                   },
                   {
                     step: "2",
                     heading: "Don't dump the whole bag at once",
                     detail:
                       "Feed fibers gradually or use pre-measured packs. One big lump of fiber overwhelms the mixing action and creates the exact clumps you're trying to avoid.",
+                    mistake: "Mistake prevented: fiber balls from overloading the mixer",
                   },
                   {
                     step: "3",
                     heading: "Mix long enough",
                     detail:
                       "After full fiber addition, extend the mixing cycle to achieve uniform distribution. Follow your fiber supplier's minimum mix-time guidance, then confirm with a visual check at discharge.",
+                    mistake: "Mistake prevented: uneven fiber distribution across the load",
                   },
                   {
                     step: "4",
                     heading: "Don't add water to fix workability",
                     detail:
                       "If fibers shift your slump, adjust with a compatible water reducer. Water addition defeats the purpose—you're trying to build a denser, tighter matrix, not dilute it.",
+                    mistake: "Mistake prevented: weakened matrix from excess water",
                   },
                   {
                     step: "5",
                     heading: "QC at discharge",
                     detail:
                       "Check slump, check finishing response, and confirm fiber distribution before placing anything that matters. Catch problems at the truck, not on the slab.",
+                    mistake: "Mistake prevented: discovering bad loads after placement",
                   },
                 ].map((item) => (
                   <Card key={item.step}>
@@ -398,6 +464,9 @@ export default function PpFiberConcrete() {
                         </p>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           {item.detail}
+                        </p>
+                        <p className="text-xs text-destructive/80 font-medium mt-2 italic">
+                          {item.mistake}
                         </p>
                       </div>
                     </CardContent>
@@ -421,16 +490,17 @@ export default function PpFiberConcrete() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 5: Beyond Crack Control ── */}
+              {/* ── Section 5: Beyond Crack Control — "Bonus performance" ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Beyond Crack Control: Other Benefits of PP Fiber
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Once micro PP fibers are in the mix for plastic shrinkage
-                control, you pick up secondary performance gains that
-                contractors and owners actually notice—particularly on
-                high-traffic slabs, industrial floors, and thin-section
-                elements.
+                You're spending $0.30/yd³ for plastic shrinkage control. Here's
+                the bonus performance you didn't pay for. Once micro PP fibers
+                are in the mix, you pick up secondary gains that contractors and
+                owners actually notice—particularly on high-traffic slabs,
+                industrial floors, and thin-section elements. Think of these as
+                free value-adds that come with the crack control investment.
               </p>
 
               <div className="grid sm:grid-cols-3 gap-4 mb-10">
@@ -439,20 +509,26 @@ export default function PpFiberConcrete() {
                     heading: "Impact & shatter resistance",
                     detail:
                       "The 3D micro-reinforcement network helps the matrix absorb localized impact and resist edge chipping, especially in thin sections and slab edges where conventional reinforcement doesn't reach.",
+                    tag: "Free add-on",
                   },
                   {
                     heading: "Surface durability",
                     detail:
                       "Fibers reduce segregation and stabilize the surface paste under finishing stress—which translates to a denser, more uniform wearing surface (mix-dependent, but consistent across most standard mixes).",
+                    tag: "Free add-on",
                   },
                   {
                     heading: "Fire-related spalling mitigation",
                     detail:
                       "Micro synthetic fibers are widely referenced for reducing explosive spalling risk in fire-exposed concrete. Fibers melt at relatively low temperatures, creating pressure relief pathways for steam escape. Application-dependent—notable for tunnel linings, parking structures, and high-rise elements.",
+                    tag: "Free add-on",
                   },
                 ].map((item) => (
                   <Card key={item.heading}>
                     <CardContent className="p-4">
+                      <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-950/40 px-2 py-0.5 rounded mb-2">
+                        {item.tag}
+                      </span>
                       <p className="text-sm font-bold text-foreground mb-2">
                         {item.heading}
                       </p>
@@ -468,7 +544,8 @@ export default function PpFiberConcrete() {
                 None of this replaces structural reinforcement. But for
                 serviceability, durability, and reducing the kind of minor
                 damage that leads to repair costs and owner complaints, PP fiber
-                earns its place in the mix.
+                earns its place in the mix—and you already paid for it when you
+                solved the crack control problem.
               </p>
 
               <Separator className="mb-10" />
@@ -480,29 +557,28 @@ export default function PpFiberConcrete() {
                     Ready to Spec PP Fiber for Your Next Project?
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    If you're specifying PP microfibers to{" "}
-                    <strong className="text-foreground">
-                      prevent concrete cracking
-                    </strong>{" "}
-                    and you want consistent, production-ready results—not
-                    guesswork—reach out to{" "}
+                    Send{" "}
                     <strong className="text-foreground">
                       Joe at Shichem Industrial
-                    </strong>
-                    .
+                    </strong>{" "}
+                    your slab spec and placement conditions—he'll quote the
+                    fiber and the SOP. No guesswork. No callbacks.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    Send him your application (slab, pavement, precast,
-                    whatever it is), your target dosage range, placement
-                    conditions, and finishing requirements. Joe's team will
-                    recommend the right{" "}
+                    Include your application (slab, pavement, precast, whatever
+                    it is), target dosage range, placement conditions, and
+                    finishing requirements. Joe's team will recommend the right{" "}
                     <strong className="text-foreground">
                       polypropylene fiber for concrete
                     </strong>
                     —monofilament or fibrillated—along with a practical batching
                     SOP, TDS, sample testing, and bulk pricing built for
-                    predictable plastic shrinkage cracking control at production
-                    scale.
+                    predictable{" "}
+                    <strong className="text-foreground">
+                      plastic shrinkage cracking
+                    </strong>{" "}
+                    control at production scale. You spend $0.30/yd³ now. You
+                    skip the $50/yd³ callback later.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link href="/contact">

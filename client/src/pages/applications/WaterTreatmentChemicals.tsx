@@ -55,25 +55,28 @@ export default function WaterTreatmentChemicals() {
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Buying water treatment chemicals for industrial use—or feeding
-                municipal-grade product into regulated potable channels—comes
-                with three risks that eat your margin and your credibility:
-                inconsistent specs, incomplete compliance paperwork, and
-                logistics that fall apart mid-shipment.
+                You're about to wire money to a supplier you've never visited
+                for chemicals going into regulated water. Here's how to not get
+                burned.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-                This guide is built for B2B buyers doing{" "}
-                <strong className="text-foreground">
-                  chemical sourcing from China
-                </strong>
-                , covering{" "}
-                <strong className="text-foreground">PAC</strong>,
+                This guide walks you through the full procurement
+                process—from writing your spec sheet for{" "}
+                <strong className="text-foreground">PAC</strong>,{" "}
                 polyphosphates (
                 <strong className="text-foreground">SHMP/STPP</strong>), and{" "}
-                <strong className="text-foreground">citric acid</strong>—along
-                with the due diligence steps that separate a dependable
-                wastewater treatment chemicals supplier from a trading house
-                that's never seen the inside of the plant they're quoting.
+                <strong className="text-foreground">citric acid</strong>, to
+                vetting a{" "}
+                <strong className="text-foreground">
+                  wastewater treatment chemicals supplier
+                </strong>
+                , running validation tests, and locking in logistics. Built
+                for B2B buyers doing{" "}
+                <strong className="text-foreground">
+                  chemical sourcing from China
+                </strong>{" "}
+                who can't afford inconsistent specs, incomplete compliance
+                paperwork, or logistics that fall apart mid-shipment.
               </p>
             </div>
           </div>
@@ -84,22 +87,18 @@ export default function WaterTreatmentChemicals() {
           <div className="container">
             <div className="max-w-3xl mx-auto">
 
-              {/* ── Section 1: Global Demand ── */}
+              {/* ── Global Demand (compressed) ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 The Global Demand for Effective Water Treatment Solutions
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Industrial plants are getting squeezed from every direction.
-                Tighter discharge permits. Higher recycle ratios. More variable
-                influent. Less tolerance for upsets. The result: water treatment
+                Industrial plants are getting squeezed from every
+                direction—tighter discharge permits, higher recycle ratios, more
+                variable influent, less tolerance for upsets. Water treatment
                 programs now demand sharper control of turbidity, hardness and
                 scale, dissolved metals, and pH—often while running at higher
                 cycles of concentration than the system was originally designed
-                for.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                What's driving the uptick in demand for water treatment chemicals
-                at the plant level:
+                for. That's why you can't afford to get sourcing wrong:
               </p>
 
               <div className="space-y-3 mb-10">
@@ -148,7 +147,27 @@ export default function WaterTreatmentChemicals() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 2: PAC ── */}
+              {/* ── Step 1: Write Your Spec First ── */}
+              <div className="flex items-start gap-4 mb-6">
+                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary font-bold text-lg flex items-center justify-center">
+                  1
+                </span>
+                <div>
+                  <p className="text-sm font-medium text-primary uppercase tracking-wide">
+                    Step 1
+                  </p>
+                  <p className="text-xl font-bold text-foreground">
+                    Write Your Spec First
+                  </p>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Before you contact a single supplier, define exactly what you
+                need. Sourcing that starts with drum price instead of the spec
+                sheet is sourcing that ends with performance complaints. Here's
+                what that looks like across the three main product categories.
+              </p>
+
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Key Coagulants &amp; Flocculants for Water Purification (PAC)
               </h2>
@@ -260,43 +279,99 @@ export default function WaterTreatmentChemicals() {
                 </p>
               </div>
 
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                The same discipline applies to polyphosphates. When comparing
+                SHMP vs. STPP from a supplier, pin down the details:
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                {[
+                  {
+                    param: "P-content, insolubles & heavy metals",
+                    detail:
+                      "These are the parameters that separate two 'equivalent' products that don't actually perform the same.",
+                  },
+                  {
+                    param: "Solution clarity & dissolution time",
+                    detail:
+                      "Test at your actual use concentration and temperature—not the supplier's lab conditions.",
+                  },
+                  {
+                    param: "Compatibility with downstream chemistry",
+                    detail:
+                      "Polymers, antiscalants, biocides. Unintended precipitation from a bad interaction will create more problems than the phosphate was supposed to solve.",
+                  },
+                ].map((row) => (
+                  <Card key={row.param}>
+                    <CardContent className="p-4">
+                      <p className="text-sm font-bold text-foreground mb-1">
+                        {row.param}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {row.detail}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              <div className="bg-muted/30 rounded-lg p-5 mb-10">
+                <p className="text-sm font-semibold text-foreground mb-3">
+                  Buyer Spec Checkpoints for Citric Acid
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  {[
+                    {
+                      label: "Anhydrous vs. monohydrate",
+                      detail:
+                        "Changes your active content and throws off dosing calculations if you're not accounting for it.",
+                    },
+                    {
+                      label: "Insolubles and solution clarity",
+                      detail:
+                        "Matters for spray systems, membrane cleaning, and anything with tight nozzle tolerances.",
+                    },
+                    {
+                      label: "Packaging moisture protection",
+                      detail:
+                        "Citric acid cakes aggressively in humid conditions during ocean transit and warehouse storage. If your supplier doesn't pack for it, you'll open drums of solid blocks instead of free-flowing product.",
+                    },
+                  ].map((row) => (
+                    <li key={row.label} className="flex items-start gap-2">
+                      <span className="flex-shrink-0 font-bold text-accent">
+                        •
+                      </span>
+                      <span>
+                        <strong className="text-foreground">{row.label}:</strong>{" "}
+                        {row.detail}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               <Separator className="mb-10" />
 
-              {/* ── Mid-page CTA ── */}
-              <Card className="bg-primary text-primary-foreground mb-10">
-                <CardContent className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <div>
-                    <p className="font-semibold text-base mb-1">
-                      Need PAC, SHMP, STPP, or citric acid with full documentation?
-                    </p>
-                    <p className="text-sm opacity-90">
-                      Share your product list, target specs, and application
-                      details. We'll come back with TDS, COA, sample testing
-                      support, and a bulk quote.
-                    </p>
-                  </div>
-                  <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-                    <a
-                      href={WHATSAPP_LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-white/90 whitespace-nowrap"
-                    >
-                      WhatsApp Us
-                    </a>
-                    <Link href="/contact">
-                      <Button
-                        variant="outline"
-                        className="border-white text-white hover:bg-white/10 whitespace-nowrap"
-                      >
-                        Send Inquiry
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
+              {/* ── Step 2: Understand the Chemistry You're Buying ── */}
+              <div className="flex items-start gap-4 mb-6">
+                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary font-bold text-lg flex items-center justify-center">
+                  2
+                </span>
+                <div>
+                  <p className="text-sm font-medium text-primary uppercase tracking-wide">
+                    Step 2
+                  </p>
+                  <p className="text-xl font-bold text-foreground">
+                    Understand the Chemistry You're Buying
+                  </p>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Specs tell you what to order. This section tells you why those
+                specs matter—what each chemical actually does in your water
+                system and where the performance risks hide.
+              </p>
 
-              {/* ── Section 3: SHMP & STPP ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Managing Hardness and Scale with Sequestrants (SHMP &amp; STPP)
               </h2>
@@ -346,51 +421,15 @@ export default function WaterTreatmentChemicals() {
                 STPP (Sodium Tripolyphosphate): Buffering &amp; Dispersion
                 Support
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-10">
                 STPP pulls double duty as a sequestrant and dispersant. It's the
                 right fit where you need hardness control and particulate
                 dispersion in the same step—cleaning operations, pre-treatment
                 stages, and formulated chemical programs.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                When comparing SHMP vs. STPP from a supplier, pin down the
-                details:
-              </p>
-
-              <div className="grid sm:grid-cols-2 gap-4 mb-10">
-                {[
-                  {
-                    param: "P-content, insolubles & heavy metals",
-                    detail:
-                      "These are the parameters that separate two 'equivalent' products that don't actually perform the same.",
-                  },
-                  {
-                    param: "Solution clarity & dissolution time",
-                    detail:
-                      "Test at your actual use concentration and temperature—not the supplier's lab conditions.",
-                  },
-                  {
-                    param: "Compatibility with downstream chemistry",
-                    detail:
-                      "Polymers, antiscalants, biocides. Unintended precipitation from a bad interaction will create more problems than the phosphate was supposed to solve.",
-                  },
-                ].map((row) => (
-                  <Card key={row.param}>
-                    <CardContent className="p-4">
-                      <p className="text-sm font-bold text-foreground mb-1">
-                        {row.param}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {row.detail}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
 
               <Separator className="mb-10" />
 
-              {/* ── Section 4: Citric Acid ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 pH Adjustment and Cleaning with Industrial-Grade Acids (Citric
                 Acid)
@@ -414,7 +453,7 @@ export default function WaterTreatmentChemicals() {
                 fouling from reasserting itself downstream. Practical
                 applications include:
               </p>
-              <ul className="space-y-2 mb-6 text-muted-foreground">
+              <ul className="space-y-2 mb-10 text-muted-foreground">
                 {[
                   "Descaling and deposit removal—frequently combined with surfactants and corrosion inhibitors for a complete cleaning program",
                   "pH adjustment in process steps where hydrochloric or sulfuric acid would be overkill or a safety liability",
@@ -429,44 +468,57 @@ export default function WaterTreatmentChemicals() {
                 ))}
               </ul>
 
-              <div className="bg-muted/30 rounded-lg p-5 mb-10">
-                <p className="text-sm font-semibold text-foreground mb-3">
-                  Buyer Spec Checkpoints for Citric Acid
-                </p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  {[
-                    {
-                      label: "Anhydrous vs. monohydrate",
-                      detail:
-                        "Changes your active content and throws off dosing calculations if you're not accounting for it.",
-                    },
-                    {
-                      label: "Insolubles and solution clarity",
-                      detail:
-                        "Matters for spray systems, membrane cleaning, and anything with tight nozzle tolerances.",
-                    },
-                    {
-                      label: "Packaging moisture protection",
-                      detail:
-                        "Citric acid cakes aggressively in humid conditions during ocean transit and warehouse storage. If your supplier doesn't pack for it, you'll open drums of solid blocks instead of free-flowing product.",
-                    },
-                  ].map((row) => (
-                    <li key={row.label} className="flex items-start gap-2">
-                      <span className="flex-shrink-0 font-bold text-accent">
-                        •
-                      </span>
-                      <span>
-                        <strong className="text-foreground">{row.label}:</strong>{" "}
-                        {row.detail}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               <Separator className="mb-10" />
 
-              {/* ── Section 5: Supplier Checklist ── */}
+              {/* ── Mid-page CTA ── */}
+              <Card className="bg-primary text-primary-foreground mb-10">
+                <CardContent className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div>
+                    <p className="font-semibold text-base mb-1">
+                      Need PAC, SHMP, STPP, or citric acid with full documentation?
+                    </p>
+                    <p className="text-sm opacity-90">
+                      Share your product list, target specs, and application
+                      details. We'll come back with TDS, COA, sample testing
+                      support, and a bulk quote.
+                    </p>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                    <a
+                      href={WHATSAPP_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-white/90 whitespace-nowrap"
+                    >
+                      WhatsApp Us
+                    </a>
+                    <Link href="/contact">
+                      <Button
+                        variant="outline"
+                        className="border-white text-white hover:bg-white/10 whitespace-nowrap"
+                      >
+                        Send Inquiry
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* ── Step 3: Vet the Supplier ── */}
+              <div className="flex items-start gap-4 mb-6">
+                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary font-bold text-lg flex items-center justify-center">
+                  3
+                </span>
+                <div>
+                  <p className="text-sm font-medium text-primary uppercase tracking-wide">
+                    Step 3
+                  </p>
+                  <p className="text-xl font-bold text-foreground">
+                    Vet the Supplier
+                  </p>
+                </div>
+              </div>
+
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Vetting Your Chinese Chemical Supplier: A Checklist for B2B
                 Buyers
@@ -497,13 +549,100 @@ export default function WaterTreatmentChemicals() {
                       "TDS showing dosing ranges, storage stability, and shelf life",
                     ],
                   },
-                  {
-                    heading: "Product Verification",
-                    items: [
+                ].map((section) => (
+                  <Card key={section.heading}>
+                    <CardContent className="p-5">
+                      <p className="font-bold text-sm text-foreground mb-3">
+                        {section.heading}
+                      </p>
+                      <ul className="space-y-1.5">
+                        {section.items.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
+                            <span className="text-accent font-bold mt-0.5 flex-shrink-0">
+                              •
+                            </span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              <Separator className="mb-10" />
+
+              {/* ── Step 4: Run Validation Tests ── */}
+              <div className="flex items-start gap-4 mb-6">
+                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary font-bold text-lg flex items-center justify-center">
+                  4
+                </span>
+                <div>
+                  <p className="text-sm font-medium text-primary uppercase tracking-wide">
+                    Step 4
+                  </p>
+                  <p className="text-xl font-bold text-foreground">
+                    Run Validation Tests Before Bulk PO
+                  </p>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                A COA tells you what the supplier says the product is. Your own
+                testing tells you what it actually does in your system. Never
+                skip this step.
+              </p>
+
+              <Card className="mb-10">
+                <CardContent className="p-5">
+                  <p className="font-bold text-sm text-foreground mb-3">
+                    Product Verification
+                  </p>
+                  <ul className="space-y-1.5">
+                    {[
                       "Pre-shipment sample pulled from the same production line that will fill your bulk order—not a 'standard sample' from a different batch",
                       "Jar tests for PAC; solubility and sequestration checks for SHMP/STPP; chelation performance for citric acid",
-                    ],
-                  },
+                    ].map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
+                        <span className="text-accent font-bold mt-0.5 flex-shrink-0">
+                          •
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Separator className="mb-10" />
+
+              {/* ── Step 5: Lock in Logistics and Documentation ── */}
+              <div className="flex items-start gap-4 mb-6">
+                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary font-bold text-lg flex items-center justify-center">
+                  5
+                </span>
+                <div>
+                  <p className="text-sm font-medium text-primary uppercase tracking-wide">
+                    Step 5
+                  </p>
+                  <p className="text-xl font-bold text-foreground">
+                    Lock in Logistics and Documentation
+                  </p>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                You've vetted the supplier and validated the product. Now make
+                sure everything holds together through shipment and customs
+                clearance.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-5 mb-10">
+                {[
                   {
                     heading: "Regulatory & Compliance",
                     items: [
@@ -552,27 +691,26 @@ export default function WaterTreatmentChemicals() {
                     Application
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    If you're sourcing water treatment chemicals for industrial
-                    use and you need a supplier who treats quality and
-                    documentation as baseline expectations—not optional
-                    extras—talk to{" "}
+                    Send{" "}
                     <strong className="text-foreground">
                       Joe at Shichem Industrial
-                    </strong>
-                    .
+                    </strong>{" "}
+                    your product list and target specs—he'll send back a
+                    qualification package with TDS, COA, application guidance,
+                    and sample testing support so you can run validation before
+                    committing to a bulk PO.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    Send him your product list, target specs, plant application
-                    details, and whatever's been giving you headaches with your
-                    current supply. Joe's team will come back with TDS,
-                    application guidance, sample testing support, and bulk
-                    pricing on{" "}
+                    Whether you're sourcing{" "}
                     <strong className="text-foreground">
-                      PAC, SHMP/STPP, and citric acid
-                    </strong>{" "}
-                    so you can qualify materials faster, cut performance
-                    variability, and lock in long-term supply you don't have to
-                    second-guess.
+                      PAC, SHMP/STPP, or citric acid
+                    </strong>
+                    , Joe's team treats quality and documentation as baseline
+                    expectations—not optional extras. Tell him what's been
+                    giving you headaches with your current supply, and get bulk
+                    pricing that lets you qualify materials faster, cut
+                    performance variability, and lock in long-term supply you
+                    don't have to second-guess.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link href="/contact">

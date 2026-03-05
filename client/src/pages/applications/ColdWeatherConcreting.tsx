@@ -55,7 +55,15 @@ export default function ColdWeatherConcreting() {
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Good{" "}
+                It's 38°F at 6 AM and the pour is at 9. The batch plant needs
+                your admixture call in the next hour. Here's your checklist.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mt-4">
+                Once ambient temperature drops below{" "}
+                <strong className="text-foreground">40°F (4°C)</strong> during
+                the protection period, you're in cold-weather territory per ACI
+                306R—hydration slows, finishing windows drag out, and the odds
+                of early freeze damage climb fast. Good{" "}
                 <strong className="text-foreground">
                   cold weather concreting
                 </strong>{" "}
@@ -66,15 +74,12 @@ export default function ColdWeatherConcreting() {
                 cycling.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-                Once ambient temperature drops below{" "}
-                <strong className="text-foreground">40°F (4°C)</strong> during
-                the protection period, you're in cold-weather territory per ACI
-                306R—hydration slows, finishing windows drag out, and the odds
-                of early freeze damage climb fast. This guide covers the{" "}
+                This guide covers the three decisions you need to make before
+                that truck rolls—and the{" "}
                 <strong className="text-foreground">
                   winter construction admixtures
                 </strong>{" "}
-                that actually move the needle: a{" "}
+                that back each one: a{" "}
                 <strong className="text-foreground">concrete accelerator</strong>{" "}
                 built on calcium formate chemistry, air-entraining agents for
                 long-term durability, and PCE superplasticizers to hold
@@ -89,28 +94,23 @@ export default function ColdWeatherConcreting() {
           <div className="container">
             <div className="max-w-3xl mx-auto">
 
-              {/* ── Section 1: The Risks ── */}
+              {/* ── Stakes: The Risks ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 The Risks of Pouring Concrete in Low Temperatures
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Cold doesn't just slow things down. It changes the chemistry.
-                Hydration rate drops, strength development stalls, and if the
-                paste freezes before it's built enough structure to resist ice
-                crystal expansion, you've got permanent damage that no amount of
-                curing will fix. ACI's cold-weather threshold—air temperature at
-                or expected below <strong className="text-foreground">40°F (4°C)</strong> during
-                the protection period—exists for exactly this reason.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The failure modes in{" "}
+                Here's what happens if you get this wrong. Cold doesn't just
+                slow things down—it changes the chemistry. ACI's cold-weather
+                threshold—air temperature at or expected below{" "}
+                <strong className="text-foreground">40°F (4°C)</strong> during
+                the protection period—exists because the failure modes in{" "}
                 <strong className="text-foreground">
                   concrete in cold climates
                 </strong>{" "}
                 are predictable, and they all cost money:
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4 mb-6">
                 {[
                   {
                     title: "Hydration slowdown → delayed early strength",
@@ -148,15 +148,34 @@ export default function ColdWeatherConcreting() {
                 <strong className="text-foreground">
                   freeze-thaw resistant concrete
                 </strong>{" "}
-                that doesn't disintegrate after the first winter.
+                that doesn't disintegrate after the first winter. The three
+                decisions below tell you exactly which admixtures you need and
+                why.
               </p>
 
               <Separator className="mb-10" />
 
-              {/* ── Section 2: Calcium Formate ── */}
+              {/* ── Decision 1: Acceleration ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Accelerating Cement Hydration with Calcium Formate
               </h2>
+
+              <Card className="bg-blue-50 border border-blue-200 mb-6">
+                <CardContent className="p-5">
+                  <p className="text-sm font-bold text-blue-900 mb-2 uppercase tracking-wide">
+                    Decision 1 — Do you need acceleration?
+                  </p>
+                  <p className="text-sm text-blue-800 leading-relaxed">
+                    <strong>IF</strong> the overnight low during the protection
+                    period is forecast below 32°F (0°C){" "}
+                    <strong>AND</strong> you need to hit ~500 psi before the
+                    freeze window closes →{" "}
+                    <strong>THEN</strong> you need a set accelerator in this
+                    batch.
+                  </p>
+                </CardContent>
+              </Card>
+
               <p className="text-muted-foreground leading-relaxed mb-4">
                 When temperatures drop, your primary chemical tool is a{" "}
                 <strong className="text-foreground">
@@ -267,10 +286,25 @@ export default function ColdWeatherConcreting() {
                 </CardContent>
               </Card>
 
-              {/* ── Section 3: AEA ── */}
+              {/* ── Decision 2: Freeze-Thaw Exposure ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Protecting Concrete from Freeze-Thaw Damage with AEA
               </h2>
+
+              <Card className="bg-blue-50 border border-blue-200 mb-6">
+                <CardContent className="p-5">
+                  <p className="text-sm font-bold text-blue-900 mb-2 uppercase tracking-wide">
+                    Decision 2 — What's your freeze-thaw exposure?
+                  </p>
+                  <p className="text-sm text-blue-800 leading-relaxed">
+                    <strong>IF</strong> the structure will face freeze-thaw
+                    cycling or de-icing salt exposure over its service life →{" "}
+                    <strong>THEN</strong> you need an AEA program dialed in
+                    before the pour.
+                  </p>
+                </CardContent>
+              </Card>
+
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Early strength gets concrete through the first 48 hours. Air
                 entrainment is what keeps it alive for the next 30 years. If the
@@ -335,10 +369,27 @@ export default function ColdWeatherConcreting() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 4: PCE ── */}
+              {/* ── Decision 3: Workability ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Maintaining Workability with the Right Superplasticizer (PCE)
               </h2>
+
+              <Card className="bg-blue-50 border border-blue-200 mb-6">
+                <CardContent className="p-5">
+                  <p className="text-sm font-bold text-blue-900 mb-2 uppercase tracking-wide">
+                    Decision 3 — Can you hold w/cm without water addition?
+                  </p>
+                  <p className="text-sm text-blue-800 leading-relaxed">
+                    <strong>IF</strong> slump is dropping at the jobsite and
+                    the crew is reaching for the water hose →{" "}
+                    <strong>THEN</strong> you need PCE, not water. Water
+                    addition destroys your designed w/cm, tanks early strength,
+                    and opens the door to every durability problem you were
+                    trying to avoid.
+                  </p>
+                </CardContent>
+              </Card>
+
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Cold makes concrete stiff and sticky. Viscosity climbs. Placement
                 crews fight the mix instead of placing it. And the worst-case
@@ -382,10 +433,14 @@ export default function ColdWeatherConcreting() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 5: Dosing Best Practices ── */}
+              {/* ── Pre-Pour Checklist ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Best Practices for Admixture Dosing in Winter Conditions
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-3">
+                You've made your three decisions. Now run through this pre-pour
+                checklist before the truck leaves the plant.
+              </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Winter dosing isn't "crank everything up and hope." It's
                 controlled adjustment—tied to actual concrete temperature,
@@ -396,26 +451,31 @@ export default function ColdWeatherConcreting() {
               <div className="space-y-5 mb-10">
                 {[
                   {
+                    step: "Step 1",
                     heading: "Dose to concrete temperature, not the calendar",
                     detail:
                       "Track three numbers: ambient temperature, concrete discharge temperature, and forecast overnight low. ACI cold-weather provisions kick in when air temps are expected below 40°F (4°C) during the protection period. If your dosing protocol is based on 'it's December, add accelerator,' you're guessing. Measure.",
                   },
                   {
+                    step: "Step 2",
                     heading: "Accelerator: push early strength, protect rebar",
                     detail:
                       "Prioritize a non-chloride accelerator—calcium formate-based systems in particular—wherever chloride limits apply or rebar durability matters. But don't over-dose. Excessive acceleration compresses your finishing and sawcut window to the point where crews can't keep up, and that invites cracking from a different direction entirely.",
                   },
                   {
+                    step: "Step 3",
                     heading: "AEA: verify air at the plant and at discharge",
                     detail:
                       "Cold-weather admixture combinations can destabilize air systems. Test more frequently than summer—at the plant and at the truck. And keep the strength trade-off front of mind: every extra 1% of air costs roughly 3–5% of 28-day compressive strength.",
                   },
                   {
+                    step: "Step 4",
                     heading: "PCE: hold workability without touching the water valve",
                     detail:
                       "Tune slump retention for your actual haul time and placement method. Whenever you change PCE dosage or swap accelerator products, re-check air content. The PCE-accelerator-AEA interaction is one of the most common points of failure in winter systems.",
                   },
                   {
+                    step: "Step 5",
                     heading: "Run a winter trial batch before the first critical pour",
                     detail:
                       "Validate set time, finishing window, 1- and 2-day compressive strength, and air-system stability using the actual project materials. Not last year's materials. Not the supplier's lab data. Yours. On your plant. In your conditions.",
@@ -427,6 +487,9 @@ export default function ColdWeatherConcreting() {
                         {i + 1}
                       </span>
                       <div>
+                        <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-1">
+                          {item.step}
+                        </p>
                         <p className="font-bold text-sm text-foreground mb-1">
                           {item.heading}
                         </p>
@@ -471,12 +534,11 @@ export default function ColdWeatherConcreting() {
                     .
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    Send him your target set time, early-strength requirements,
-                    exposure conditions, and mix design details. Joe's team will
-                    come back with TDS, formulation and mix-design support,
-                    sample testing, and bulk pricing built around your
-                    project—not a generic recommendation off a shelf. One email
-                    gets the conversation started.
+                    Send Joe your mix design, target set time, and overnight
+                    low forecast. His team will come back with TDS, formulation
+                    and mix-design support, sample testing, and bulk pricing
+                    built around your project—not a generic recommendation off
+                    a shelf. One message gets the conversation started.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link href="/contact">

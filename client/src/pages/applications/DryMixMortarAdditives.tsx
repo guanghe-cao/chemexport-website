@@ -10,6 +10,67 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 const WHATSAPP_LINK =
   "https://wa.me/8615653883028?text=Hello%2C%20I'm%20interested%20in%20dry-mix%20mortar%20additives%20(HPMC%2C%20RDP%2C%20wood%20fiber).%20Please%20share%20TDS%2C%20COA%2C%20MOQ%2C%20packing%2C%20and%20lead%20time.";
 
+function LayerIndicator({
+  number,
+  label,
+  color,
+}: {
+  number: number;
+  label: string;
+  color: "blue" | "green" | "amber";
+}) {
+  const colorMap = {
+    blue: "bg-blue-100 text-blue-700 border-blue-200",
+    green: "bg-green-100 text-green-700 border-green-200",
+    amber: "bg-amber-100 text-amber-700 border-amber-200",
+  };
+  const ringMap = {
+    blue: "bg-blue-600",
+    green: "bg-green-600",
+    amber: "bg-amber-600",
+  };
+
+  return (
+    <div className="flex items-center gap-4 mb-6">
+      <div
+        className={`w-14 h-14 rounded-full ${ringMap[color]} text-white flex items-center justify-center text-2xl font-bold flex-shrink-0`}
+      >
+        {number}
+      </div>
+      <span
+        className={`text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full border ${colorMap[color]}`}
+      >
+        {label}
+      </span>
+    </div>
+  );
+}
+
+function MiniLayerBar({
+  layers,
+}: {
+  layers: { label: string; intensity: "high" | "medium" | "low" | "optional"; color: string }[];
+}) {
+  const heightMap = { high: "h-8", medium: "h-5", low: "h-3", optional: "h-2" };
+  const labelMap = { high: "High", medium: "Med", low: "Low", optional: "Opt" };
+
+  return (
+    <div className="flex items-end gap-2 mt-4 mb-2">
+      {layers.map((l) => (
+        <div key={l.label} className="flex flex-col items-center gap-1">
+          <span className="text-[10px] font-bold text-muted-foreground">
+            {labelMap[l.intensity]}
+          </span>
+          <div className={`w-16 ${heightMap[l.intensity]} ${l.color} rounded-sm`} />
+          <span className="text-[10px] font-semibold text-foreground mt-0.5">
+            {l.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function DryMixMortarAdditives() {
   usePageMeta({
     title:
@@ -56,10 +117,17 @@ export default function DryMixMortarAdditives() {
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Dry-mix plants that consistently ship good product aren't
-                running better cement. They're running better additive
-                packages—tighter HPMC selection, properly dosed RDP, fiber where
-                it counts—and they're controlling those inputs batch after batch.
+                A mortar additive package is a system with three layers. Get one
+                wrong and the other two can't compensate.{" "}
+                <strong className="text-foreground">Layer 1</strong> controls
+                water.{" "}
+                <strong className="text-foreground">Layer 2</strong> builds bond
+                and flexibility.{" "}
+                <strong className="text-foreground">Layer 3</strong> holds the
+                green matrix together while the mortar cures. Every dry-mix
+                plant that ships reliably has all three layers dialed in—not
+                just dosed, but matched to the cement, the sand, the climate,
+                and the target application.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mt-4">
                 The fastest path to better{" "}
@@ -68,16 +136,16 @@ export default function DryMixMortarAdditives() {
                 <strong className="text-foreground">
                   dry-mix mortar additives
                 </strong>{" "}
-                and dosing them like they matter. This guide breaks down{" "}
+                and assembling them as a system. This guide walks through{" "}
                 <strong className="text-foreground">
                   cellulose ether mortar
                 </strong>{" "}
                 systems (HPMC), polymer modification (RDP), and wood fiber—three
-                additive levers that{" "}
+                additive layers that{" "}
                 <strong className="text-foreground">
                   improve mortar workability
                 </strong>
-                , adhesion, and crack resistance across high-volume production.
+                , adhesion, and crack resistance when stacked correctly.
               </p>
             </div>
           </div>
@@ -88,7 +156,7 @@ export default function DryMixMortarAdditives() {
           <div className="container">
             <div className="max-w-3xl mx-auto">
 
-              {/* ── Section 1: Why Additives Matter ── */}
+              {/* ── Section 1: Why Additives Matter — Layer Failure Framing ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 The Foundation of Quality: Why Mortar Additives Matter
               </h2>
@@ -101,34 +169,43 @@ export default function DryMixMortarAdditives() {
                 makes it unpredictable.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                The pain points that keep plant managers and formulators up at
-                night:
+                Every failure maps to a layer that broke down:
               </p>
 
               <div className="space-y-3 mb-8">
                 {[
                   {
                     label: "Low water retention",
+                    tag: "Layer 1 failure",
+                    tagColor: "bg-blue-100 text-blue-700",
                     detail:
                       "The mortar skins over before the installer finishes tooling. Curing suffers. Adhesion drops.",
                   },
                   {
                     label: "Poor workability",
+                    tag: "Layer 1 failure",
+                    tagColor: "bg-blue-100 text-blue-700",
                     detail:
                       "Tearing under the trowel, inconsistent feel, installers adding water on site to compensate—which creates a whole new set of problems.",
                   },
                   {
-                    label: "Cracking and powdering",
-                    detail:
-                      "Shrinkage stress meets a paste that can't hold itself together. The surface fails.",
-                  },
-                  {
                     label: "Debonding on smooth substrates",
+                    tag: "Layer 2 failure",
+                    tagColor: "bg-green-100 text-green-700",
                     detail:
                       "The polymer film never formed properly, or there wasn't enough polymer to form one at all.",
                   },
                   {
+                    label: "Cracking and powdering",
+                    tag: "Layer 3 failure",
+                    tagColor: "bg-amber-100 text-amber-700",
+                    detail:
+                      "Shrinkage stress meets a paste that can't hold itself together. The surface fails.",
+                  },
+                  {
                     label: "Sag and slip on walls",
+                    tag: "Layer 3 failure",
+                    tagColor: "bg-amber-100 text-amber-700",
                     detail:
                       "Yield stress too low, thixotropy not designed into the system.",
                   },
@@ -141,22 +218,29 @@ export default function DryMixMortarAdditives() {
                       •
                     </span>
                     <span>
-                      <strong className="text-foreground">{item.label}:</strong>{" "}
-                      {item.detail}
+                      <strong className="text-foreground">{item.label}</strong>{" "}
+                      <span
+                        className={`inline-block text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${item.tagColor} align-middle mx-1`}
+                      >
+                        {item.tag}
+                      </span>{" "}
+                      — {item.detail}
                     </span>
                   </div>
                 ))}
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-10 italic border-l-2 border-accent pl-4">
-                Get all three working together—HPMC, RDP, and wood fiber—and
+                Get all three layers working together—HPMC, RDP, and wood fiber—and
                 you ship product that performs in the field with fewer callbacks
                 and tighter QC windows in your plant.
               </p>
 
               <Separator className="mb-10" />
 
-              {/* ── Section 2: HPMC ── */}
+              {/* ── LAYER 1: Water Control — HPMC ── */}
+              <LayerIndicator number={1} label="Layer 1 — Water Control" color="blue" />
+
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 HPMC: The Key to Superior Water Retention and Workability
               </h2>
@@ -171,7 +255,8 @@ export default function DryMixMortarAdditives() {
                 formulation. It governs two things simultaneously: how much
                 water stays in the mortar and how the mortar behaves under the
                 trowel. Open time, anti-sag, application feel—HPMC touches all
-                of it.
+                of it. When Layer 1 is right, the other two layers have the
+                moisture environment they need to do their jobs.
               </p>
 
               <h3 className="text-xl font-bold text-foreground mt-8 mb-4">
@@ -286,7 +371,9 @@ export default function DryMixMortarAdditives() {
                 </CardContent>
               </Card>
 
-              {/* ── Section 3: RDP ── */}
+              {/* ── LAYER 2: Bond and Flexibility — RDP ── */}
+              <LayerIndicator number={2} label="Layer 2 — Bond & Flexibility" color="green" />
+
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 RDP: Boosting Adhesion and Flexibility in Polymer-Modified
                 Mortars
@@ -300,7 +387,9 @@ export default function DryMixMortarAdditives() {
                 and real durability. During mixing, RDP redisperses into the
                 water phase. As the mortar cures, the polymer coalesces into a
                 continuous film that threads through the pore network and builds
-                strength at every interface.
+                strength at every interface. Layer 2 can only form that film
+                properly when Layer 1 gives it enough retained water to work
+                with.
               </p>
 
               <h3 className="text-xl font-bold text-foreground mt-8 mb-4">
@@ -371,7 +460,9 @@ export default function DryMixMortarAdditives() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 4: Wood Fiber ── */}
+              {/* ── LAYER 3: Green-State Structure — Wood Fiber ── */}
+              <LayerIndicator number={3} label="Layer 3 — Green-State Structure" color="amber" />
+
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Wood Fiber: The Natural Solution for Crack Resistance and
                 Stability
@@ -381,7 +472,9 @@ export default function DryMixMortarAdditives() {
                 green-state mortar stability. In plasters, joint compounds, and
                 anti-sag mortars, it reinforces the fresh matrix, builds early
                 cohesion, and reduces the kind of shrinkage-driven surface
-                defects that lead to rework and customer complaints.
+                defects that lead to rework and customer complaints. Layer 3
+                picks up where Layers 1 and 2 leave off—it gives the mortar
+                physical structure before hydraulic strength kicks in.
               </p>
 
               <h3 className="text-xl font-bold text-foreground mt-8 mb-4">
@@ -425,7 +518,13 @@ export default function DryMixMortarAdditives() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 5: Formulating for Specific Applications ── */}
+              {/* ── Stacking the Layers — Combining Additives ── */}
+              <div className="mb-6">
+                <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-2">
+                  Stacking the Layers for Your Product
+                </p>
+              </div>
+
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Formulating for Success: Combining Additives for Specific
                 Applications
@@ -436,6 +535,8 @@ export default function DryMixMortarAdditives() {
                 an integrated system: HPMC manages water and rheology, RDP
                 delivers adhesion and toughness, and wood fiber holds the green
                 matrix together during the most vulnerable phase of curing.
+                Below, see how the three layers stack differently depending on
+                what you're building.
               </p>
 
               <div className="space-y-6 mb-10">
@@ -460,6 +561,11 @@ export default function DryMixMortarAdditives() {
                     ],
                     validate:
                       "Open time and skin formation timing, vertical slip and sag, tensile adhesion (dry, wet, and after heat aging), air content stability across batches.",
+                    layers: [
+                      { label: "L1 HPMC", intensity: "high" as const, color: "bg-blue-400" },
+                      { label: "L2 RDP", intensity: "high" as const, color: "bg-green-400" },
+                      { label: "L3 Fiber", intensity: "optional" as const, color: "bg-amber-400" },
+                    ],
                   },
                   {
                     title: "Wall Putty",
@@ -481,6 +587,11 @@ export default function DryMixMortarAdditives() {
                     ],
                     validate:
                       "Sanding behavior and dust generation, surface hardness, shrinkage cracking tendency, and compatibility with topcoats and paints.",
+                    layers: [
+                      { label: "L1 HPMC", intensity: "high" as const, color: "bg-blue-400" },
+                      { label: "L2 RDP", intensity: "low" as const, color: "bg-green-400" },
+                      { label: "L3 Fiber", intensity: "medium" as const, color: "bg-amber-400" },
+                    ],
                   },
                   {
                     title: "EIFS / Base Coats and Polymer-Modified Renders",
@@ -502,6 +613,11 @@ export default function DryMixMortarAdditives() {
                     ],
                     validate:
                       "Tensile bond to insulation substrate, crack-bridging performance under thermal cycling, impact resistance (hard body and soft body), workability at temperature extremes.",
+                    layers: [
+                      { label: "L1 HPMC", intensity: "high" as const, color: "bg-blue-400" },
+                      { label: "L2 RDP", intensity: "high" as const, color: "bg-green-400" },
+                      { label: "L3 Fiber", intensity: "medium" as const, color: "bg-amber-400" },
+                    ],
                   },
                 ].map((app) => (
                   <Card key={app.title} className="border-l-4 border-l-primary/40">
@@ -512,7 +628,10 @@ export default function DryMixMortarAdditives() {
                       <p className="text-sm text-muted-foreground italic mb-4">
                         Objective: {app.objective}
                       </p>
-                      <div className="space-y-2 mb-4">
+
+                      <MiniLayerBar layers={app.layers} />
+
+                      <div className="space-y-2 mb-4 mt-4">
                         {app.roles.map((r) => (
                           <div
                             key={r.ingredient}
@@ -562,17 +681,17 @@ export default function DryMixMortarAdditives() {
                     .
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    Tell him your target application—tile adhesive,{" "}
+                    Tell Joe which product you're building—tile adhesive,{" "}
                     <strong className="text-foreground">
                       additives for wall putty
                     </strong>
-                    , render, EIFS, whatever you're running—along with your
-                    local cement and sand details, and the performance gaps
-                    you're trying to close. Joe's team will spec an optimized
-                    HPMC + RDP + wood fiber package with dosing strategy, TDS,
-                    sample testing, and bulk pricing that scales cleanly from
-                    your lab bench to your production silo. One conversation.
-                    Real formulation support. Consistent raw materials.
+                    , render, EIFS, whatever you're running—and he'll spec the
+                    three-layer package: the right HPMC for Layer 1, the right
+                    RDP for Layer 2, and the right fiber for Layer 3. Dosing
+                    strategy, TDS, sample testing, and bulk pricing that scales
+                    cleanly from your lab bench to your production silo. One
+                    conversation. Real formulation support. Consistent raw
+                    materials.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link href="/contact">

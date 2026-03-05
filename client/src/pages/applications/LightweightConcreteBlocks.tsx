@@ -167,7 +167,111 @@ export default function LightweightConcreteBlocks() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 2: Core Technology ── */}
+              {/* ── Section 2: Protein vs Synthetic (moved up — pick chemistry first) ── */}
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
+                Protein vs. Synthetic Foaming Agents: Which Is Right for You?
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                The{" "}
+                <strong className="text-foreground">
+                  protein foaming agent vs synthetic
+                </strong>{" "}
+                decision is a process decision, not just a price comparison. The
+                two chemistries produce different foam characteristics, different
+                pore structures, and different levels of robustness under real
+                production conditions—especially at the lower densities where
+                foam stability is the difference between product and waste.
+              </p>
+
+              {/* Comparison Table */}
+              <div className="overflow-x-auto mb-8">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-muted/40">
+                      <th className="text-left p-3 font-bold text-foreground border border-border">
+                        Attribute
+                      </th>
+                      <th className="text-left p-3 font-bold text-foreground border border-border">
+                        Protein-Based
+                      </th>
+                      <th className="text-left p-3 font-bold text-foreground border border-border">
+                        Synthetic-Based
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      {
+                        attr: "Foam stability",
+                        protein:
+                          "Typically strong—protein films form resilient bubble walls that resist drainage and collapse",
+                        synthetic:
+                          "Can be very stable in well-formulated products, but varies widely between suppliers",
+                      },
+                      {
+                        attr: "Pore structure",
+                        protein:
+                          "Often produces tighter, more uniform cells with a closed-cell tendency",
+                        synthetic:
+                          "Can produce uniform pores, but some formulations trend toward more open-cell structure",
+                      },
+                      {
+                        attr: "Strength at density",
+                        protein:
+                          "Often favorable—a stable void system means fewer weak zones per unit volume",
+                        synthetic:
+                          "Can match protein results but tends to be more sensitive to process control, especially at 400–800 kg/m³",
+                      },
+                      {
+                        attr: "Handling & storage",
+                        protein:
+                          "More sensitive to temperature and shelf life—can degrade if stored poorly",
+                        synthetic:
+                          "Generally simpler logistics and longer shelf stability (supplier-dependent)",
+                      },
+                    ].map((row, i) => (
+                      <tr
+                        key={row.attr}
+                        className={i % 2 === 0 ? "bg-background" : "bg-muted/10"}
+                      >
+                        <td className="p-3 font-semibold text-foreground border border-border align-top whitespace-nowrap">
+                          {row.attr}
+                        </td>
+                        <td className="p-3 text-muted-foreground border border-border align-top">
+                          {row.protein}
+                        </td>
+                        <td className="p-3 text-muted-foreground border border-border align-top">
+                          {row.synthetic}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="bg-muted/30 rounded-lg p-5 mb-10 text-sm">
+                <p className="font-semibold text-foreground mb-3">
+                  Quick Selection Rules (Plant-Friendly)
+                </p>
+                <ul className="space-y-2 text-muted-foreground">
+                  {[
+                    "Go with protein foaming agents when foam stability is your top priority—low-density blocks below 600 kg/m³, tight density tolerances, and applications where pore uniformity directly affects thermal or acoustic performance.",
+                    "Go with synthetic foaming agents when handling simplicity and supply consistency matter more—warmer climates with storage challenges, operations without cold-chain capability, and plants where operator training turnover is high.",
+                    "If you're running multiple density grades off one line, qualify both types through actual production trials. Then standardize on whichever one delivers the lowest total cost—including scrap rate, rework, and strength variability. The cheapest drum on the dock is not always the cheapest foam in the block.",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="text-accent font-bold mt-0.5 flex-shrink-0">
+                        •
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <Separator className="mb-10" />
+
+              {/* ── Section 3: Core Technology ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 The Core Technology: Creating Stable Foam with a Foaming Agent
               </h2>
@@ -272,110 +376,6 @@ export default function LightweightConcreteBlocks() {
                 </CardContent>
               </Card>
 
-              {/* ── Section 3: Protein vs Synthetic ── */}
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
-                Protein vs. Synthetic Foaming Agents: Which Is Right for You?
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                The{" "}
-                <strong className="text-foreground">
-                  protein foaming agent vs synthetic
-                </strong>{" "}
-                decision is a process decision, not just a price comparison. The
-                two chemistries produce different foam characteristics, different
-                pore structures, and different levels of robustness under real
-                production conditions—especially at the lower densities where
-                foam stability is the difference between product and waste.
-              </p>
-
-              {/* Comparison Table */}
-              <div className="overflow-x-auto mb-8">
-                <table className="w-full text-sm border-collapse">
-                  <thead>
-                    <tr className="bg-muted/40">
-                      <th className="text-left p-3 font-bold text-foreground border border-border">
-                        Attribute
-                      </th>
-                      <th className="text-left p-3 font-bold text-foreground border border-border">
-                        Protein-Based
-                      </th>
-                      <th className="text-left p-3 font-bold text-foreground border border-border">
-                        Synthetic-Based
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      {
-                        attr: "Foam stability",
-                        protein:
-                          "Typically strong—protein films form resilient bubble walls that resist drainage and collapse",
-                        synthetic:
-                          "Can be very stable in well-formulated products, but varies widely between suppliers",
-                      },
-                      {
-                        attr: "Pore structure",
-                        protein:
-                          "Often produces tighter, more uniform cells with a closed-cell tendency",
-                        synthetic:
-                          "Can produce uniform pores, but some formulations trend toward more open-cell structure",
-                      },
-                      {
-                        attr: "Strength at density",
-                        protein:
-                          "Often favorable—a stable void system means fewer weak zones per unit volume",
-                        synthetic:
-                          "Can match protein results but tends to be more sensitive to process control, especially at 400–800 kg/m³",
-                      },
-                      {
-                        attr: "Handling & storage",
-                        protein:
-                          "More sensitive to temperature and shelf life—can degrade if stored poorly",
-                        synthetic:
-                          "Generally simpler logistics and longer shelf stability (supplier-dependent)",
-                      },
-                    ].map((row, i) => (
-                      <tr
-                        key={row.attr}
-                        className={i % 2 === 0 ? "bg-background" : "bg-muted/10"}
-                      >
-                        <td className="p-3 font-semibold text-foreground border border-border align-top whitespace-nowrap">
-                          {row.attr}
-                        </td>
-                        <td className="p-3 text-muted-foreground border border-border align-top">
-                          {row.protein}
-                        </td>
-                        <td className="p-3 text-muted-foreground border border-border align-top">
-                          {row.synthetic}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              <div className="bg-muted/30 rounded-lg p-5 mb-10 text-sm">
-                <p className="font-semibold text-foreground mb-3">
-                  Quick Selection Rules (Plant-Friendly)
-                </p>
-                <ul className="space-y-2 text-muted-foreground">
-                  {[
-                    "Go with protein foaming agents when foam stability is your top priority—low-density blocks below 600 kg/m³, tight density tolerances, and applications where pore uniformity directly affects thermal or acoustic performance.",
-                    "Go with synthetic foaming agents when handling simplicity and supply consistency matter more—warmer climates with storage challenges, operations without cold-chain capability, and plants where operator training turnover is high.",
-                    "If you're running multiple density grades off one line, qualify both types through actual production trials. Then standardize on whichever one delivers the lowest total cost—including scrap rate, rework, and strength variability. The cheapest drum on the dock is not always the cheapest foam in the block.",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="text-accent font-bold mt-0.5 flex-shrink-0">
-                        •
-                      </span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <Separator className="mb-10" />
-
               {/* ── Section 4: Mix Design & Production Process ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 A Basic Mix Design and Production Process for CLC Blocks
@@ -447,7 +447,7 @@ export default function LightweightConcreteBlocks() {
                 Step-by-Step Production Process
               </h3>
 
-              <div className="space-y-4 mb-10">
+              <div className="space-y-4 mb-8">
                 {[
                   {
                     step: "1",
@@ -510,12 +510,82 @@ export default function LightweightConcreteBlocks() {
                 ))}
               </div>
 
+              {/* ── Common Mistakes (consolidated from warnings above) ── */}
+              <h3 className="text-xl font-bold text-foreground mt-8 mb-4">
+                Common Mistakes and How to Spot Them
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                These five problems show up on almost every CLC line at some
+                point. Catching them early saves blocks and batches.
+              </p>
+
+              <div className="grid sm:grid-cols-1 gap-4 mb-10">
+                {[
+                  {
+                    mistake: "Foam density drift",
+                    symptom:
+                      "Fresh density scatter between pours—blocks in the same run weigh different amounts with no mix change.",
+                    fix:
+                      "Check foam generator output density before every production run. Lock dilution ratio, air pressure, and solution temperature. If foam density wanders more than ±5 g/L from target, stop and recalibrate before injecting.",
+                  },
+                  {
+                    mistake: "Over-mixing after foam injection",
+                    symptom:
+                      "Density at discharge looks right but cured blocks come out denser than expected. Cut faces show fewer, smaller voids than your foam volume should produce.",
+                    fix:
+                      "Reduce mixing time after foam injection. Mix at low shear, just long enough to distribute foam uniformly. Every extra 30 seconds of high-shear mixing ruptures bubbles you can't get back.",
+                  },
+                  {
+                    mistake: "Dropping slurry from height during casting",
+                    symptom:
+                      "Top-layer collapse in molds. Visible density gradient from bottom to top of the block.",
+                    fix:
+                      "Minimize drop height at the pour point. Use a hose or chute to deliver foamed slurry as close to the mold surface as practical. Foam breaks on impact.",
+                  },
+                  {
+                    mistake: "Aggressive vibration",
+                    symptom:
+                      "Surface looks dense while the core stays light. Overall density runs higher than calculated from foam input.",
+                    fix:
+                      "Reduce vibration intensity or eliminate it. CLC doesn't need vibration to consolidate. If you must vibrate, validate that your foam survives the specific setting you're using.",
+                  },
+                  {
+                    mistake: "Blocks drying too fast during curing",
+                    symptom:
+                      "Surface cracking, curling at edges, low 28-day strength despite correct density.",
+                    fix:
+                      "Cover molds and maintain humidity during initial curing. High void content means less mass to buffer water loss—early drying causes shrinkage cracking and stalls hydration.",
+                  },
+                ].map((item) => (
+                  <Card key={item.mistake} className="border-l-4 border-l-amber-400">
+                    <CardContent className="p-5">
+                      <p className="font-bold text-sm text-foreground mb-2">
+                        {item.mistake}
+                      </p>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        <strong className="text-foreground">Symptom:</strong>{" "}
+                        {item.symptom}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        <strong className="text-foreground">Fix:</strong>{" "}
+                        {item.fix}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
               <Separator className="mb-10" />
 
               {/* ── Section 5: QC & Sourcing ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Quality Control and Sourcing Reliable Foaming Agents
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4 italic">
+                Treat this section as your production QC checklist—what to
+                control on your production floor, including your incoming
+                materials, to keep blocks consistent and scrap rates low.
+              </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 CLC production rewards process discipline more than any other
                 block-making technology. The same formula, the same equipment,

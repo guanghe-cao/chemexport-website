@@ -56,19 +56,26 @@ export default function PaintCoatingFillers() {
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Stop calling fillers "cheap extenders." That mindset is twenty
-                years out of date and it's costing you performance. In any
-                well-built formulation,{" "}
-                <strong className="text-foreground">industrial fillers</strong>{" "}
-                are functional{" "}
+                Your paint has a problem. Is it hiding? Scrub? Sheen drift?
+                Corrosion? The answer isn't "buy more TiO₂"—it's picking the
+                right{" "}
+                <strong className="text-foreground">
+                  industrial filler
+                </strong>{" "}
+                for the failure mode. In a well-built formulation,{" "}
                 <strong className="text-foreground">
                   paint and coating additives
                 </strong>{" "}
-                that directly control opacity, sheen, scrub resistance, barrier
-                behavior, and rheology.
+                like{" "}
+                <strong className="text-foreground">extender pigments</strong>{" "}
+                aren't cheap bulk—they're functional tools that directly control
+                opacity, sheen, scrub resistance, barrier behavior, and
+                rheology.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-                This guide covers how{" "}
+                This guide is organized around the problem your formulation is
+                having—low opacity, weak scrub, corrosion creep, sheen that
+                won't hold—and shows how{" "}
                 <strong className="text-foreground">
                   calcium carbonate filler
                 </strong>
@@ -80,9 +87,8 @@ export default function PaintCoatingFillers() {
                 <strong className="text-foreground">
                   kaolin clay paint filler
                 </strong>{" "}
-                solve real formulation problems—and how to pick the right grade
-                based on particle size, shape, and binder demand instead of
-                price per ton.
+                each address it. CaCO₃ vs. Talc vs. Kaolin: which one fixes
+                your problem?
               </p>
             </div>
           </div>
@@ -93,7 +99,7 @@ export default function PaintCoatingFillers() {
           <div className="container">
             <div className="max-w-3xl mx-auto">
 
-              {/* ── Section 1: Functional Role ── */}
+              {/* ── Functional Role (Compressed) ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Beyond Color: The Functional Role of Fillers in Coatings
               </h2>
@@ -104,10 +110,8 @@ export default function PaintCoatingFillers() {
                 oil absorption (which is really binder demand by another name).
                 Together, these control the micro-architecture of the dried film:
                 how pigments pack together, how efficiently light scatters, and
-                how fast water and ions find a path through the matrix.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                What industrial fillers actually engineer in your formulation:
+                how fast water and ions find a path through the matrix. Here's
+                what they actually engineer:
               </p>
 
               <div className="space-y-3 mb-8">
@@ -155,13 +159,116 @@ export default function PaintCoatingFillers() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 2: Calcium Carbonate ── */}
+              {/* ── Comparison Table (Moved Up from Section 5) ── */}
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
+                Selecting the Right Filler: A Guide for Coating Formulators
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Picking industrial fillers is an engineering decision, not a
+                purchasing decision. Particle size, PSD, oil absorption, shape,
+                and purity have to align with your target PVC, sheen
+                specification, and durability requirements. Start here—see all
+                three fillers side by side, then drill into the specific failure
+                mode that brought you to this page.
+              </p>
+
+              <div className="overflow-x-auto mb-10">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-muted/40">
+                      <th className="text-left p-3 font-bold text-foreground border border-border">
+                        Filler
+                      </th>
+                      <th className="text-left p-3 font-bold text-foreground border border-border">
+                        Particle Form
+                      </th>
+                      <th className="text-left p-3 font-bold text-foreground border border-border">
+                        Strongest Contribution
+                      </th>
+                      <th className="text-left p-3 font-bold text-foreground border border-border">
+                        Watch Outs
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      {
+                        filler: "Calcium Carbonate (GCC/PCC)",
+                        form: "Equant / irregular (grade-dependent)",
+                        strength:
+                          "Brightness, volume extension, cost control, opacity support in interiors",
+                        watchouts:
+                          "Too fine spikes viscosity; too coarse hurts gloss/scrub; grit and brightness drift between lots",
+                      },
+                      {
+                        filler: "Talc",
+                        form: "Platy / lamellar",
+                        strength:
+                          "Barrier properties, durability reinforcement, anti-corrosion in primers",
+                        watchouts:
+                          "Higher binder demand; iron contamination risk; strong effect on sheen and rheology",
+                      },
+                      {
+                        filler: "Kaolin (Hydrous / Calcined)",
+                        form: "Plate-like",
+                        strength:
+                          "Sheen control, hiding efficiency, film reinforcement",
+                        watchouts:
+                          "Dispersion-sensitive; viscosity risk; settling and float if stabilization is weak",
+                      },
+                    ].map((row, i) => (
+                      <tr
+                        key={row.filler}
+                        className={i % 2 === 0 ? "bg-background" : "bg-muted/10"}
+                      >
+                        <td className="p-3 font-semibold text-foreground border border-border align-top">
+                          {row.filler}
+                        </td>
+                        <td className="p-3 text-muted-foreground border border-border align-top">
+                          {row.form}
+                        </td>
+                        <td className="p-3 text-muted-foreground border border-border align-top">
+                          {row.strength}
+                        </td>
+                        <td className="p-3 text-muted-foreground border border-border align-top">
+                          {row.watchouts}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Now pick the failure mode that matches your formulation problem
+                and see how each filler stacks up.
+              </p>
+
+              <Separator className="mb-10" />
+
+              {/* ── Problem 1: Low Hiding / Brightness ── */}
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                  CaCO₃ ✓
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                  Kaolin ✓
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-500">
+                  Talc —
+                </span>
+              </div>
+              <p className="text-sm font-bold text-primary mb-6 uppercase tracking-wider">
+                Problem 1: Low Hiding / Brightness
+              </p>
+
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Calcium Carbonate (GCC/PCC): The Workhorse for Brightness and
                 Opacity
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                A well-selected{" "}
+                If your formulation is falling short on hiding or brightness,
+                start here. A well-selected{" "}
                 <strong className="text-foreground">
                   calcium carbonate filler
                 </strong>{" "}
@@ -262,6 +369,29 @@ export default function PaintCoatingFillers() {
                 </ul>
               </div>
 
+              <h3 className="text-xl font-bold text-foreground mt-8 mb-4">
+                How Kaolin Controls Gloss and Supports Pigment Dispersion
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                CaCO₃ handles the bulk of the brightness and TiO₂ spacing work,
+                but kaolin pulls its weight on the hiding problem too—and brings
+                gloss control that CaCO₃ alone can't deliver:
+              </p>
+              <ul className="space-y-2 mb-6 text-muted-foreground">
+                {[
+                  "Hiding efficiency support: Kaolin helps with pigment packing geometry and can improve how TiO₂ distributes through the film—which means you improve paint opacity without simply dumping in more titanium dioxide.",
+                  "Sheen control: The flat, plate-like particles interrupt the film surface at a microscopic level, scattering reflected light and pulling gloss down in a controlled, predictable way. This is how you hit a consistent flat or matte without over-matting and killing the film's ability to clean.",
+                  "Film structure: Adds mechanical reinforcement that can improve block resistance and reduce surface tack in critical-PVC and near-CPVC systems.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-accent font-bold mt-0.5 flex-shrink-0">
+                      •
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
               <Separator className="mb-10" />
 
               {/* ── Mid-page CTA ── */}
@@ -299,19 +429,35 @@ export default function PaintCoatingFillers() {
                 </CardContent>
               </Card>
 
-              {/* ── Section 3: Talc ── */}
+              {/* ── Problem 2: Weak Scrub / Poor Film Durability ── */}
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                  Talc ✓
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                  Kaolin ✓
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-500">
+                  CaCO₃ —
+                </span>
+              </div>
+              <p className="text-sm font-bold text-primary mb-6 uppercase tracking-wider">
+                Problem 2: Weak Scrub / Poor Film Durability
+              </p>
+
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Talc Powder: Improving Durability and Barrier Properties
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
+                When scrub numbers are falling short or films are failing under
+                mechanical stress,{" "}
                 <strong className="text-foreground">
-                  Talc powder for coatings
+                  talc powder for coatings
                 </strong>{" "}
-                brings something the other fillers can't: a naturally platy,
-                lamellar particle shape that stacks in the film like shingles on
-                a roof. Water and ions don't travel in a straight line through a
-                talc-loaded film—they wind through a tortuous path that buys you
-                time and durability.
+                is the first place to look. Talc brings something the other
+                fillers can't: a naturally platy, lamellar particle shape that
+                stacks in the film like shingles on a roof. That platelet
+                reinforcement distributes stress instead of concentrating it.
               </p>
 
               <h3 className="text-xl font-bold text-foreground mt-8 mb-4">
@@ -324,11 +470,6 @@ export default function PaintCoatingFillers() {
                     failure: "Poor scrub resistance or early burnish",
                     solution:
                       "The platy reinforcement distributes stress across the film surface instead of letting the brush or pad dig in. In the right binder balance, talc-loaded films hold their sheen longer under wet scrubbing. Overload it or under-bind it and you lose the benefit—but get the ratio right and scrub numbers climb.",
-                  },
-                  {
-                    failure: "Moisture sensitivity and corrosion creep",
-                    solution:
-                      "This is talc's signature move. Lamellar particles oriented in the film plane create overlapping barriers that slow water and chloride ingress. In primers for steel and exterior wood, that path-length extension translates directly to slower corrosion initiation and less blistering.",
                   },
                   {
                     failure: "Weak film toughness in higher-PVC systems",
@@ -349,10 +490,19 @@ export default function PaintCoatingFillers() {
                 ))}
               </div>
 
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Kaolin contributes here too. Its plate-like particles add
+                mechanical reinforcement that improves block resistance and
+                reduces surface tack in critical-PVC and near-CPVC systems. In
+                high-PVC interiors, blending talc for stress distribution with
+                kaolin for structural rigidity can deliver scrub and toughness
+                numbers that neither filler achieves alone.
+              </p>
+
+              <h3 className="text-xl font-bold text-foreground mt-8 mb-4">
+                Procurement &amp; QC Controls for Talc
+              </h3>
               <div className="bg-muted/30 rounded-lg p-5 mb-10 text-sm">
-                <p className="font-semibold text-foreground mb-3">
-                  Procurement &amp; QC Controls for Talc
-                </p>
                 <ul className="space-y-1.5 text-muted-foreground">
                   {[
                     "Aspect ratio: Higher aspect ratio = stronger barrier effect and more shear-thinning response. Cheap talc often means low aspect ratio and a fraction of the barrier performance.",
@@ -371,7 +521,74 @@ export default function PaintCoatingFillers() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 4: Kaolin ── */}
+              {/* ── Problem 3: Corrosion / Moisture Barrier ── */}
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                  Talc ✓
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-500">
+                  CaCO₃ —
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-500">
+                  Kaolin —
+                </span>
+              </div>
+              <p className="text-sm font-bold text-primary mb-6 uppercase tracking-wider">
+                Problem 3: Corrosion Creep / Moisture Blistering
+              </p>
+
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                This is talc's signature territory. Water and ions don't travel
+                in a straight line through a talc-loaded film—they wind through
+                a tortuous path that buys you time and durability. The barrier
+                mechanism is straightforward: lamellar particles oriented in the
+                film plane create overlapping barriers that slow water and
+                chloride ingress.
+              </p>
+
+              <Card className="border-l-4 border-l-primary/40 mb-8">
+                <CardContent className="p-5">
+                  <p className="text-sm font-bold text-foreground mb-1">
+                    Moisture sensitivity and corrosion creep
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    This is talc's signature move. Lamellar particles oriented
+                    in the film plane create overlapping barriers that slow
+                    water and chloride ingress. In primers for steel and
+                    exterior wood, that path-length extension translates
+                    directly to slower corrosion initiation and less
+                    blistering.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Barrier performance is a function of aspect ratio and loading.
+                Cheap, low-aspect-ratio talc won't get the job done—you need
+                platy grades with genuine lamellar structure and enough loading
+                to build overlapping barriers without starving the binder. Pair
+                it with the appropriate anti-corrosion pigment package for the
+                service environment.
+              </p>
+
+              <Separator className="mb-10" />
+
+              {/* ── Problem 4: Sheen Control / Gloss Targeting ── */}
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                  Kaolin ✓
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                  Talc ✓
+                </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-500">
+                  CaCO₃ —
+                </span>
+              </div>
+              <p className="text-sm font-bold text-primary mb-6 uppercase tracking-wider">
+                Problem 4: Sheen Control / Gloss Targeting
+              </p>
+
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Kaolin Clay: Enhancing Sheen Control and Hiding Power
               </h2>
@@ -387,23 +604,14 @@ export default function PaintCoatingFillers() {
                 non-opacifying filler.
               </p>
 
-              <h3 className="text-xl font-bold text-foreground mt-8 mb-4">
-                How Kaolin Controls Gloss and Supports Pigment Dispersion
-              </h3>
-              <ul className="space-y-2 mb-6 text-muted-foreground">
-                {[
-                  "Sheen control: The flat, plate-like particles interrupt the film surface at a microscopic level, scattering reflected light and pulling gloss down in a controlled, predictable way. This is how you hit a consistent flat or matte without over-matting and killing the film's ability to clean.",
-                  "Hiding efficiency support: Kaolin helps with pigment packing geometry and can improve how TiO₂ distributes through the film—which means you improve paint opacity without simply dumping in more titanium dioxide.",
-                  "Film structure: Adds mechanical reinforcement that can improve block resistance and reduce surface tack in critical-PVC and near-CPVC systems.",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="text-accent font-bold mt-0.5 flex-shrink-0">
-                      •
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                If your formulation can't hold its sheen target—too glossy in
+                flat, too flat in eggshell, drifting between batches—the answer
+                is almost always in your kaolin grade and loading. The choice
+                between hydrous and calcined kaolin determines how aggressively
+                you can flatten gloss and what trade-offs you accept on
+                viscosity and dispersion.
+              </p>
 
               <div className="grid md:grid-cols-2 gap-5 mb-6">
                 <Card className="border-l-4 border-l-primary">
@@ -466,88 +674,17 @@ export default function PaintCoatingFillers() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 5: Selection Guide ── */}
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
-                Selecting the Right Filler: A Guide for Coating Formulators
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Picking industrial fillers is an engineering decision, not a
-                purchasing decision. Particle size, PSD, oil absorption, shape,
-                and purity have to align with your target PVC, sheen
-                specification, and durability requirements.
-              </p>
-
-              {/* Comparison Table */}
-              <div className="overflow-x-auto mb-10">
-                <table className="w-full text-sm border-collapse">
-                  <thead>
-                    <tr className="bg-muted/40">
-                      <th className="text-left p-3 font-bold text-foreground border border-border">
-                        Filler
-                      </th>
-                      <th className="text-left p-3 font-bold text-foreground border border-border">
-                        Particle Form
-                      </th>
-                      <th className="text-left p-3 font-bold text-foreground border border-border">
-                        Strongest Contribution
-                      </th>
-                      <th className="text-left p-3 font-bold text-foreground border border-border">
-                        Watch Outs
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      {
-                        filler: "Calcium Carbonate (GCC/PCC)",
-                        form: "Equant / irregular (grade-dependent)",
-                        strength:
-                          "Brightness, volume extension, cost control, opacity support in interiors",
-                        watchouts:
-                          "Too fine spikes viscosity; too coarse hurts gloss/scrub; grit and brightness drift between lots",
-                      },
-                      {
-                        filler: "Talc",
-                        form: "Platy / lamellar",
-                        strength:
-                          "Barrier properties, durability reinforcement, anti-corrosion in primers",
-                        watchouts:
-                          "Higher binder demand; iron contamination risk; strong effect on sheen and rheology",
-                      },
-                      {
-                        filler: "Kaolin (Hydrous / Calcined)",
-                        form: "Plate-like",
-                        strength:
-                          "Sheen control, hiding efficiency, film reinforcement",
-                        watchouts:
-                          "Dispersion-sensitive; viscosity risk; settling and float if stabilization is weak",
-                      },
-                    ].map((row, i) => (
-                      <tr
-                        key={row.filler}
-                        className={i % 2 === 0 ? "bg-background" : "bg-muted/10"}
-                      >
-                        <td className="p-3 font-semibold text-foreground border border-border align-top">
-                          {row.filler}
-                        </td>
-                        <td className="p-3 text-muted-foreground border border-border align-top">
-                          {row.form}
-                        </td>
-                        <td className="p-3 text-muted-foreground border border-border align-top">
-                          {row.strength}
-                        </td>
-                        <td className="p-3 text-muted-foreground border border-border align-top">
-                          {row.watchouts}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
+              {/* ── Selection Workflow (Summary) ── */}
               <h3 className="text-xl font-bold text-foreground mb-5">
                 A Practical Selection Workflow: Start with the Failure Mode
               </h3>
+
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                You've seen how each filler addresses specific failure modes
+                above. Here's the quick-reference version—start with the
+                problem, then check loading, binder demand, and dispersion
+                before ordering.
+              </p>
 
               <div className="space-y-4 mb-10">
                 {[
@@ -614,14 +751,15 @@ export default function PaintCoatingFillers() {
                     Raw Material Costs?
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    If your filler package isn't performing and you want to fix
-                    it instead of guessing, reach out to{" "}
+                    Send{" "}
                     <strong className="text-foreground">
                       Joe at Shichem Industrial
-                    </strong>
-                    . Send him your resin system, target sheen level, PVC range,
-                    and current filler/TiO₂ package—along with whatever specific
-                    problem is driving the conversation.
+                    </strong>{" "}
+                    your resin system and the specific failure you're solving.
+                    Include your target sheen level, PVC range, and current
+                    filler/TiO₂ package—along with whatever problem drove you
+                    to this page. A formulator-to-formulator conversation beats
+                    guessing at grade selection.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     Joe's team will recommend the right{" "}

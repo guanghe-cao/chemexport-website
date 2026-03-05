@@ -25,7 +25,7 @@ export default function ZincOxideRubber() {
       <Navigation />
 
       <main className="flex-1">
-        {/* ─── Hero ─────────────────────────────────────────────── */}
+        {/* ─── Hero — Mechanism-first cold open ───────────────── */}
         <section className="bg-gradient-to-br from-primary/5 to-accent/5 py-16">
           <div className="container">
             <div className="max-w-3xl">
@@ -54,30 +54,30 @@ export default function ZincOxideRubber() {
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                After decades of compounding innovation,{" "}
+                Every sulfur-cured compound runs through the same activation
+                chain:{" "}
                 <strong className="text-foreground">zinc oxide rubber</strong>{" "}
-                activation is still the industry-standard platform for
-                sulfur-cured compounds. Nothing else does the job as reliably
-                at scale. ZnO works as a{" "}
-                <strong className="text-foreground">ZnO activator</strong> that
-                governs cure rate, crosslink efficiency, and long-term
-                durability.
+                reacts with stearic acid to form zinc stearate, zinc ions
+                complex with accelerators, and those complexes generate the
+                sulfurating species that actually build crosslinks. ZnO is the
+                first link. When that link weakens—wrong grade, drifting
+                purity, inconsistent surface area—the whole cure system
+                underperforms.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-                When compounders need to{" "}
-                <strong className="text-foreground">
-                  improve rubber aging resistance
-                </strong>{" "}
-                without tightening the scorch window to the point where
-                processing becomes a headache, it's ZnO dosage and grade they
-                adjust first. This guide covers the activation mechanism, why
-                "active" grades exist and when they're worth the premium, and
-                how to source{" "}
+                This guide traces the activation mechanism from the{" "}
+                <strong className="text-foreground">ZnO activator</strong>{" "}
+                surface through to final crosslink formation, maps the failure
+                modes that show up when ZnO quality slips, and covers how to
+                source{" "}
                 <strong className="text-foreground">
                   zinc oxide for rubber compounding
                 </strong>{" "}
-                with the consistency and documentation your QC program actually
-                requires.
+                with the consistency to{" "}
+                <strong className="text-foreground">
+                  improve rubber aging resistance
+                </strong>{" "}
+                and keep your cure curves where they belong—lot after lot.
               </p>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function ZincOxideRubber() {
           <div className="container">
             <div className="max-w-3xl mx-auto">
 
-              {/* ── Section 1: What Is Vulcanization ── */}
+              {/* ── Section 1: What Is Vulcanization (compressed) ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 What Is Rubber Vulcanization and Why Is It Essential?
               </h2>
@@ -96,17 +96,12 @@ export default function ZincOxideRubber() {
                 <strong className="text-foreground">
                   Rubber vulcanization
                 </strong>{" "}
-                is the crosslinking process that turns a soft, tacky elastomer
-                compound into something that behaves like an engineered
-                material. In sulfur-based systems, curing builds sulfur bridges
-                between polymer chains—and those bridges are what give the final
-                product its elasticity, strength, and service life.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                What vulcanization creates at the finished-product level:
+                builds sulfur bridges between polymer chains, turning soft
+                compound into an engineered material. The mechanism that follows
+                depends entirely on how well this crosslinking process performs:
               </p>
 
-              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              <div className="grid sm:grid-cols-2 gap-4 mb-6">
                 {[
                   {
                     label: "Elastic recovery & tensile strength",
@@ -143,16 +138,13 @@ export default function ZincOxideRubber() {
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-10 italic border-l-2 border-destructive/30 pl-4">
-                Without a controlled cure, none of this is predictable. You get
-                scorch problems in processing, under-cured parts that fail early,
-                reversion in thick sections, and physical properties that scatter
-                across every batch. The cure system is the compound. Everything
-                else is supporting cast.
+                Without a controlled cure, none of this is predictable. The cure
+                system is the compound. And the cure system starts with ZnO.
               </p>
 
               <Separator className="mb-10" />
 
-              {/* ── Section 2: ZnO as Activator ── */}
+              {/* ── Section 2: THE MECHANISM (centerpiece) ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Zinc Oxide as the Primary Activator in the Cure System
               </h2>
@@ -173,54 +165,118 @@ export default function ZincOxideRubber() {
               <h3 className="text-xl font-bold text-foreground mt-8 mb-4">
                 How ZnO + Stearic Acid Activates Accelerators
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Here's what happens during compounding and cure:
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                The activation chain has three links. Break any one and the
+                downstream steps starve:
               </p>
 
-              <div className="space-y-4 mb-8">
-                {[
-                  {
-                    step: "1",
-                    heading: "Stearic acid forms zinc soaps",
-                    detail:
-                      "Stearic acid attacks the ZnO surface and forms zinc stearate, dramatically improving zinc ion availability and dispersion through the rubber phase. Without this step, most of your ZnO sits as inert particles that contribute nothing to cure.",
-                  },
-                  {
-                    step: "2",
-                    heading: "Zn²⁺ ions complex with accelerators",
-                    detail:
-                      "Zn²⁺ ions form complexes with thiazoles, sulfenamides, dithiocarbamates, and the whole accelerator family. These zinc–accelerator complexes are far more reactive toward sulfur than the accelerator alone.",
-                  },
-                  {
-                    step: "3",
-                    heading: "Active sulfurating species build crosslinks",
-                    detail:
-                      "The complexes generate active sulfurating species that build crosslinks faster, more completely, and with better selectivity for the crosslink types you want (mono- and disulfidic vs. polysulfidic, depending on the system).",
-                  },
-                ].map((item) => (
-                  <Card key={item.step}>
+              {/* Vertical mechanism chain with connecting arrows */}
+              <div className="relative mb-10">
+                {/* Step 1 */}
+                <div className="relative">
+                  <Card className="border-2 border-primary/30 shadow-sm">
                     <CardContent className="p-5 flex items-start gap-4">
-                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary font-bold text-sm flex items-center justify-center mt-0.5">
-                        {item.step}
+                      <span className="flex-shrink-0 w-9 h-9 rounded-full bg-primary text-primary-foreground font-bold text-sm flex items-center justify-center mt-0.5">
+                        1
                       </span>
                       <div>
-                        <p className="font-bold text-sm text-foreground mb-1">
-                          {item.heading}
+                        <p className="font-bold text-foreground mb-1">
+                          Stearic acid forms zinc soaps
                         </p>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          {item.detail}
+                          Stearic acid attacks the ZnO surface and forms zinc
+                          stearate, dramatically improving zinc ion availability
+                          and dispersion through the rubber phase. Without this
+                          step, most of your ZnO sits as inert particles that
+                          contribute nothing to cure.
                         </p>
                       </div>
                     </CardContent>
                   </Card>
-                ))}
+                </div>
+
+                {/* Arrow connector 1→2 */}
+                <div className="flex justify-center py-1">
+                  <div className="flex flex-col items-center">
+                    <div className="w-0.5 h-4 bg-primary/40" />
+                    <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-primary/40" />
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="relative">
+                  <Card className="border-2 border-primary/30 shadow-sm">
+                    <CardContent className="p-5 flex items-start gap-4">
+                      <span className="flex-shrink-0 w-9 h-9 rounded-full bg-primary text-primary-foreground font-bold text-sm flex items-center justify-center mt-0.5">
+                        2
+                      </span>
+                      <div>
+                        <p className="font-bold text-foreground mb-1">
+                          Zn²⁺ ions complex with accelerators
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Zn²⁺ ions form complexes with thiazoles, sulfenamides,
+                          dithiocarbamates, and the whole accelerator family.
+                          These zinc–accelerator complexes are far more reactive
+                          toward sulfur than the accelerator alone.
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Arrow connector 2→3 */}
+                <div className="flex justify-center py-1">
+                  <div className="flex flex-col items-center">
+                    <div className="w-0.5 h-4 bg-primary/40" />
+                    <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-primary/40" />
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="relative">
+                  <Card className="border-2 border-primary/30 shadow-sm">
+                    <CardContent className="p-5 flex items-start gap-4">
+                      <span className="flex-shrink-0 w-9 h-9 rounded-full bg-primary text-primary-foreground font-bold text-sm flex items-center justify-center mt-0.5">
+                        3
+                      </span>
+                      <div>
+                        <p className="font-bold text-foreground mb-1">
+                          Active sulfurating species build crosslinks
+                        </p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          The complexes generate active sulfurating species that
+                          build crosslinks faster, more completely, and with
+                          better selectivity for the crosslink types you want
+                          (mono- and disulfidic vs. polysulfidic, depending on
+                          the system).
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Chain summary label */}
+                <div className="mt-4 text-center">
+                  <span className="inline-block text-xs font-semibold text-primary/70 uppercase tracking-widest bg-primary/5 rounded-full px-4 py-1.5">
+                    ZnO → Zinc Stearate → Zn-Accelerator Complex → Sulfurating
+                    Species → Crosslinks
+                  </span>
+                </div>
               </div>
 
-              <div className="bg-muted/30 rounded-lg p-5 mb-10 text-sm">
-                <p className="font-semibold text-foreground mb-2">
+              {/* Rheometer box — expanded */}
+              <div className="bg-muted/30 rounded-lg p-6 mb-10 border border-muted">
+                <p className="font-semibold text-foreground mb-3 text-base">
                   What Proper Activation Looks Like on the Rheometer
                 </p>
-                <ul className="space-y-1.5 text-muted-foreground">
+                <p className="text-sm text-muted-foreground mb-3">
+                  When all three links in the chain are working—ZnO grade is
+                  right, stearic acid ratio is matched, and the accelerator
+                  package sees enough reactive zinc—you read it directly off
+                  the MDR or ODR trace:
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   {[
                     "Faster torque development — the cure rate picks up without moving the scorch point dangerously close to your processing window",
                     "Higher ultimate torque at the same time and temperature — more complete crosslinking, which means better physical properties per minute of press time",
@@ -234,60 +290,36 @@ export default function ZincOxideRubber() {
                     </li>
                   ))}
                 </ul>
+                <p className="text-sm text-muted-foreground mt-3 italic">
+                  If you're seeing sluggish torque rise, long t90, or a
+                  scorch-cure window that keeps tightening—the first place to
+                  look is the activation chain, not the accelerator.
+                </p>
               </div>
 
               <Separator className="mb-10" />
 
-              {/* ── Mid-page CTA ── */}
-              <Card className="bg-primary text-primary-foreground mb-10">
-                <CardContent className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <div>
-                    <p className="font-semibold text-base mb-1">
-                      Need active or standard ZnO for rubber compounding?
-                    </p>
-                    <p className="text-sm opacity-90">
-                      Share your polymer system, accelerator package, target
-                      cure profile, and current ZnO loading. We'll recommend
-                      the right grade with TDS, COA, sample testing, and bulk
-                      pricing.
-                    </p>
-                  </div>
-                  <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-                    <a
-                      href={WHATSAPP_LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-white/90 whitespace-nowrap"
-                    >
-                      WhatsApp Us
-                    </a>
-                    <Link href="/contact">
-                      <Button
-                        variant="outline"
-                        className="border-white text-white hover:bg-white/10 whitespace-nowrap"
-                      >
-                        Send Inquiry
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* ── Section 3: Particle Size & Purity ── */}
+              {/* ── Section 3: What Happens When the Chain Breaks ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 The Impact of ZnO Particle Size and Purity on Performance
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Two bags of zinc oxide can look identical, test at the same
+                The activation chain above looks clean on paper. In practice,
+                two bags of zinc oxide can look identical, test at the same
                 assay, and behave completely differently in the mixer and in the
                 press. Particle size, surface area, and trace impurity profile
                 determine how much reactive zinc is actually available for
                 activation—and how consistently it shows up lot after lot.
+                Here's what happens when the first link weakens.
               </p>
 
               <h3 className="text-xl font-bold text-foreground mb-4">
                 Active vs. Standard Zinc Oxide Rubber Grades
               </h3>
+              <p className="text-sm text-muted-foreground mb-4 italic">
+                When the first link is too coarse or weak, the whole chain
+                fires slower—or doesn't fire evenly at all.
+              </p>
               <div className="grid md:grid-cols-2 gap-5 mb-8">
                 <Card className="border-l-4 border-l-primary">
                   <CardContent className="p-5">
@@ -349,6 +381,11 @@ export default function ZincOxideRubber() {
               <h3 className="text-xl font-bold text-foreground mt-8 mb-4">
                 Purity: Why Trace Impurities Show Up as Cure Drift
               </h3>
+              <p className="text-sm text-muted-foreground mb-4 italic">
+                When contamination disrupts complex formation, the second and
+                third links in the chain misfire—and you see it as
+                batch-to-batch scatter that no mixing adjustment can fix.
+              </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 ZnO is a reactive input, not inert powder. The purity parameters
                 that actually affect your compound:
@@ -410,16 +447,50 @@ export default function ZincOxideRubber() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 4: Beyond Vulcanization ── */}
+              {/* ── Mid-page CTA (moved after failure modes) ── */}
+              <Card className="bg-primary text-primary-foreground mb-10">
+                <CardContent className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div>
+                    <p className="font-semibold text-base mb-1">
+                      Need active or standard ZnO for rubber compounding?
+                    </p>
+                    <p className="text-sm opacity-90">
+                      Share your polymer system, accelerator package, target
+                      cure profile, and current ZnO loading. We'll recommend
+                      the right grade with TDS, COA, sample testing, and bulk
+                      pricing.
+                    </p>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                    <a
+                      href={WHATSAPP_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-white/90 whitespace-nowrap"
+                    >
+                      WhatsApp Us
+                    </a>
+                    <Link href="/contact">
+                      <Button
+                        variant="outline"
+                        className="border-white text-white hover:bg-white/10 whitespace-nowrap"
+                      >
+                        Send Inquiry
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* ── Section 4: Beyond Vulcanization (brief) ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Beyond Vulcanization: Other Functions of ZnO in Rubber
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                ZnO pulls extra weight beyond the cure system. These secondary
-                functions don't replace dedicated stabilizers or pigments, but
-                they add real value in specific compound designs—particularly in
-                white and light-colored goods, technical rubber products, and
-                compounds where thermal management matters.
+                ZnO is already in the formula for activation. While it's
+                there, it pulls extra weight. These secondary functions don't
+                replace dedicated stabilizers or pigments, but in the right
+                compound design they add real value at no extra loading cost.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -466,12 +537,13 @@ export default function ZincOxideRubber() {
 
               <Separator className="mb-10" />
 
-              {/* ── Section 5: Sourcing Checklist ── */}
+              {/* ── Section 5: Sourcing (mechanism protection) ── */}
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-5">
                 Sourcing High-Quality Rubber-Grade Zinc Oxide: Buyer Checklist
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Selecting an{" "}
+                If the activation chain starts with ZnO, controlling ZnO
+                quality controls the entire cure. Selecting an{" "}
                 <strong className="text-foreground">
                   active zinc oxide supplier
                 </strong>{" "}
@@ -537,7 +609,7 @@ export default function ZincOxideRubber() {
 
               <Separator className="mb-10" />
 
-              {/* ── Bottom CTA ── */}
+              {/* ── Bottom CTA — tailored to mechanism ── */}
               <Card className="bg-accent/5 border-accent/20">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-foreground mb-3">
@@ -564,12 +636,12 @@ export default function ZincOxideRubber() {
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     Send him your polymer system (NR, SBR, EPDM, NBR—whatever
-                    you're running), your accelerator package, target cure
-                    profile, and current ZnO loading. Joe's team will recommend
-                    the right grade, build a QC spec around your requirements,
-                    and provide TDS, compounding support, sample testing, and
-                    bulk pricing so you can reduce cure drift and start getting
-                    the lot-to-lot consistency your production floor needs.
+                    you're running), your accelerator package, and your target
+                    cure profile. Joe's team will match the ZnO grade to the
+                    mechanism—surface area, purity spec, and loading
+                    optimized for your activation chain—then back it with
+                    TDS, compounding support, sample testing, and bulk pricing
+                    so every lot feeds the same cure curve.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link href="/contact">
