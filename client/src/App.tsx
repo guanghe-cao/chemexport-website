@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import { Quality, Export, Applications, Resources } from "./pages/PlaceholderPages";
 import Tio2CoatingsGuide from "./pages/applications/Tio2CoatingsGuide";
 import IronOxideConcrete from "./pages/applications/IronOxideConcrete";
+import ConcreteAdmixturesReadyMix from "./pages/applications/ConcreteAdmixturesReadyMix";
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/applications" component={Applications} />
       <Route path="/applications/tio2-coatings-guide" component={Tio2CoatingsGuide} />
       <Route path="/applications/iron-oxide-concrete" component={IronOxideConcrete} />
+      <Route path="/applications/5-key-concrete-admixtures-ready-mix-performance" component={ConcreteAdmixturesReadyMix} />
       <Route path="/resources" component={Resources} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />

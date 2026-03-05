@@ -2,8 +2,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { Link } from "wouter";
-import { ShieldCheck, Truck, Lightbulb, BookOpen } from "lucide-react";
+import { ShieldCheck, Truck, Lightbulb, BookOpen, ArrowRight } from "lucide-react";
 
 export function Quality() {
   return (
@@ -141,6 +142,84 @@ export function Applications() {
                   </CardContent>
                 </Card>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Technical Insights ── */}
+        <section className="py-16 bg-muted/20">
+          <div className="container">
+            <div className="max-w-6xl mx-auto">
+              <div className="flex items-center gap-2 mb-2">
+                <BookOpen className="h-5 w-5 text-primary" />
+                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+                  Technical Insights
+                </span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                In-Depth Application Guides
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                Practical guides written for procurement managers and engineers—covering formulation, selection criteria, and supplier qualification.
+              </p>
+
+              <Separator className="mb-8" />
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Article Card: Concrete Admixtures */}
+                <Link href="/applications/5-key-concrete-admixtures-ready-mix-performance">
+                  <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group overflow-hidden">
+                    <div className="aspect-video overflow-hidden">
+                      <img
+                        src="/images/concrete-admixtures.png"
+                        alt="Ready-mix concrete with chemical admixtures"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <CardContent className="p-5">
+                      <span className="text-xs font-semibold text-primary uppercase tracking-wide">
+                        Concrete &amp; Construction
+                      </span>
+                      <h3 className="font-bold text-base text-foreground group-hover:text-primary transition-colors mt-1.5 mb-2 leading-snug">
+                        5 Key Concrete Admixtures to Improve Ready-Mix Concrete Performance
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                        Discover the essential admixtures—PCE, SNF, calcium formate, sodium gluconate, and AEA—that enhance workability, strength, and durability in ready-mix concrete.
+                      </p>
+                      <div className="flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                        Read More <ArrowRight className="h-4 w-4" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Article Card: TiO2 in Coatings */}
+                <Link href="/applications/tio2-coatings-guide">
+                  <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group overflow-hidden">
+                    <div className="aspect-video overflow-hidden">
+                      <img
+                        src="/images/water-treatment.png"
+                        alt="Titanium dioxide pigment for architectural coatings"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <CardContent className="p-5">
+                      <span className="text-xs font-semibold text-primary uppercase tracking-wide">
+                        Paint &amp; Coatings
+                      </span>
+                      <h3 className="font-bold text-base text-foreground group-hover:text-primary transition-colors mt-1.5 mb-2 leading-snug">
+                        How to Choose the Right TiO₂ Grade for Architectural Coatings
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                        Comprehensive guide on selecting high-performance titanium dioxide for the paint and coatings industry—rutile vs anatase, hiding power, and dispersion.
+                      </p>
+                      <div className="flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                        Read More <ArrowRight className="h-4 w-4" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
