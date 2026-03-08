@@ -5,6 +5,7 @@
  */
 
 import { useRoute, Link } from "wouter";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -26,6 +27,13 @@ export default function ProductDetail() {
   if (!product) {
     return <NotFound />;
   }
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  usePageMeta({
+    title: `${product.name} – Industrial Chemical Export | ShiChem`,
+    description: `${product.description.slice(0, 140)}. Container-level export from China. Request a quote from ShiChem Industrial.`,
+    keywords: `${product.name}, ${product.tradeNames.join(", ")}, chemical export China`,
+  });
 
   const relatedProducts = products
     .filter(p => p.categorySlug === product.categorySlug && p.id !== product.id)

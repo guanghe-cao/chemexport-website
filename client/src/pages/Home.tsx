@@ -23,8 +23,17 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Home() {
+  usePageMeta({
+    title: "ShiChem Industrial Materials – Chemical Export from China",
+    description:
+      "Container-level export of industrial chemicals from China: concrete admixtures, dry-mix mortar additives, pigments, water treatment chemicals, and more. Request a quote from ShiChem Industrial.",
+    keywords:
+      "chemical export China, industrial chemicals supplier, concrete admixtures, HPMC, RDP, PAC, zinc oxide, TiO2, ShiChem Industrial",
+  });
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />

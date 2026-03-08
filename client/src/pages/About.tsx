@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,14 @@ import { Link } from "wouter";
 import { Building2, Users, Target, Award } from "lucide-react";
 
 export default function About() {
+  usePageMeta({
+    title: "About ShiChem Industrial – Chemical Export Company from China",
+    description:
+      "ShiChem Industrial Materials is a Chinese B2B chemical exporter specializing in construction and industrial chemicals. Container-level supply with full documentation and quality assurance.",
+    keywords:
+      "ShiChem Industrial, chemical exporter China, B2B chemical supplier, construction chemicals, industrial materials China",
+  });
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />

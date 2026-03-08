@@ -9,10 +9,19 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { productCategories } from "@/data/products";
 import Navigation from "@/components/Navigation";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import Footer from "@/components/Footer";
 import { Package } from "lucide-react";
 
 export default function Products() {
+  usePageMeta({
+    title: "Industrial Chemical Products for Export – ShiChem Industrial",
+    description:
+      "Browse ShiChem's full product range: concrete admixtures, dry-mix mortar additives, construction fibers, pigments, and water treatment chemicals. Container-level B2B export from China.",
+    keywords:
+      "industrial chemical products China, chemical export supplier, concrete admixtures, HPMC, RDP, zinc oxide, PAC, ShiChem",
+  });
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />

@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,6 +13,14 @@ import { useState, type FormEvent } from "react";
 import { productCategories } from "@/data/products";
 
 export default function Contact() {
+  usePageMeta({
+    title: "Contact ShiChem Industrial – Request a Quote or Sample",
+    description:
+      "Send an inquiry to ShiChem Industrial for chemical export pricing, samples, or product documentation. We respond within 24 hours for all B2B inquiries.",
+    keywords:
+      "contact ShiChem Industrial, chemical export inquiry, request quote chemicals China, industrial chemical supplier contact",
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
 

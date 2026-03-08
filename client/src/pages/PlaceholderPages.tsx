@@ -5,8 +5,17 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "wouter";
 import { ShieldCheck, Truck, Lightbulb, BookOpen, ArrowRight } from "lucide-react";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export function Quality() {
+  usePageMeta({
+    title: "Quality & Compliance – ShiChem Industrial Chemical Export",
+    description:
+      "ShiChem Industrial's quality management systems, certifications, and compliance documentation for chemical exports. COA, MSDS/SDS, and third-party testing available.",
+    keywords:
+      "chemical quality assurance China, COA chemical export, MSDS chemical China, ISO certified chemical supplier, ShiChem quality",
+  });
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
@@ -52,6 +61,14 @@ export function Quality() {
 }
 
 export function Export() {
+  usePageMeta({
+    title: "Export Capability – Chemical Shipping from China | ShiChem",
+    description:
+      "ShiChem Industrial ships chemicals worldwide. Learn about our container-level export capabilities, packaging options, lead times, Incoterms, and logistics support.",
+    keywords:
+      "chemical export from China, container chemical shipping, Incoterms chemical, export capability chemical supplier, ShiChem Industrial",
+  });
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
@@ -96,6 +113,14 @@ export function Export() {
 }
 
 export function Applications() {
+  usePageMeta({
+    title: "Chemical Application Guides – Industry Use Cases | ShiChem",
+    description:
+      "Technical application guides for industrial chemicals: coatings, construction, rubber, water treatment, and more. In-depth B2B resources from ShiChem Industrial.",
+    keywords:
+      "chemical applications, TiO2 coatings, concrete admixtures guide, HPMC mortar, rubber chemicals, water treatment chemicals, ShiChem",
+  });
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
@@ -473,6 +498,14 @@ export function Applications() {
 }
 
 export function Resources() {
+  usePageMeta({
+    title: "Chemical Export Resources – Datasheets & Trade Guides | ShiChem",
+    description:
+      "Download TDS, SDS/MSDS, and technical documentation for ShiChem Industrial chemicals. Guides on Incoterms, packaging, sampling, and international chemical trade.",
+    keywords:
+      "chemical TDS download, MSDS chemical export, ShiChem resources, chemical trade guide, technical documentation chemicals",
+  });
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
